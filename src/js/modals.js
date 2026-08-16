@@ -47,7 +47,7 @@ export const modalViews = {
                 >
                   ${SERVICE_PLANS.map(p => `
                     <option value="${p.id}" ${selectedPlan.id === p.id ? 'selected' : ''}>
-                      ${p.title} — $${p.price} ${p.currency}
+                      ${p.title}${p.price !== null ? ` — $${p.price.toLocaleString('es-MX')} ${p.currency}` : ''}
                     </option>
                   `).join('')}
                 </select>

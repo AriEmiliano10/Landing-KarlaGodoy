@@ -220,7 +220,7 @@ export const appHelpers = {
       document.getElementById(id)?.addEventListener('click', handler);
     };
 
-    ['nav-booking-btn', 'hero-booking-btn', 'about-booking-btn', 'sales-cta-booking-btn', 'mobile-sticky-booking-btn']
+    ['nav-booking-btn', 'hero-booking-btn', 'consultation-booking-btn', 'about-booking-btn', 'sales-cta-booking-btn', 'mobile-sticky-booking-btn']
       .forEach(id => onClick(id, () => this.handleOpenBooking()));
 
     onClick('mobile-booking-btn', () => {

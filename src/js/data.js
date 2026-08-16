@@ -55,8 +55,8 @@ export const EBOOKS_DATA = [
     targetAudience: 'Para quienes tienen poco tiempo y desean comer delicioso, nutritivo y organizado cada semana.'
   },
   {
-    id: 'genetica-y-metabolismo',
-    title: 'Genética & Metabolismo',
+    id: 'metabolismo-y-rendimiento',
+    title: 'Metabolismo & Rendimiento',
     subtitle: 'Estrategias de Nutrición de Vanguardia & Recomposición Corporal',
     price: 24.99,
     currency: 'USD',
@@ -64,15 +64,15 @@ export const EBOOKS_DATA = [
     pages: 140,
     format: 'PDF Interactivo High Quality',
     coverImage: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80',
-    description: 'Descubre cómo tu genética influye en el procesamiento de carbohidratos, grasas y respuesta al ejercicio. Una lectura clave para optimizar la masa muscular y reducir porcentaje de grasa.',
+    description: 'Descubre estrategias prácticas para optimizar el uso de carbohidratos, grasas y tu respuesta al ejercicio. Una lectura clave para mejorar tu composición corporal y rendimiento.',
     benefits: [
-      'Explicación clara de nutrigenómica y nutrigenética.',
+      'Explicación clara de los principios del metabolismo y la recomposición corporal.',
       'Estrategias de ciclado de carbohidratos según tu entrenamiento.',
       'Optimizadores de flexibilidad metabólica.',
       'Guía de sincronización del entrenamiento con tu alimentación.'
     ],
     tableOfContents: [
-      'Capítulo 1: Tu código genético y la nutrición individualizada',
+      'Capítulo 1: Metabolismo y nutrición individualizada',
       'Capítulo 2: Flexibilidad metabólica: Aprende a quemar grasa como energía',
       'Capítulo 3: Crononutrición y ritmos circadianos',
       'Capítulo 4: Estrategias avanzadas de recomposición corporal',
@@ -110,56 +110,59 @@ export const EBOOKS_DATA = [
 
 export const SERVICE_PLANS = [
   {
-    id: 'consulta-inicial',
-    title: 'Consulta Nutricional Inicial',
-    subtitle: 'Evaluación Clínica & Diagnóstico Personalizado',
-    modality: 'hibrido',
-    duration: '60 Minutos',
-    price: 65,
-    currency: 'USD',
-    recommendedFor: 'Ideal para iniciar con una valoración premium y una estrategia nutricional diseñada exclusivamente para ti.',
+    id: 'wellness-integral',
+    title: 'Consulta Wellness Integral',
+    subtitle: 'Valoración clínica y estrategia nutricional personalizada · Pagos mensuales',
+    modality: 'presencial',
+    duration: 'Consulta presencial',
+    price: null,
+    currency: 'MXN',
+    recommendedFor: 'Empieza a entender lo que tu cuerpo necesita con una valoración integral diseñada para tu estilo de vida.',
     features: [
-      'Evaluación del historial clínico, metabólico y hábitos de vida.',
-      'Análisis de composición corporal (InBody / Pliegues en presencial o mediciones guiadas en online).',
-      'Plan de alimentación 100% personalizado adaptado a tus gustos y rutina.',
-      'Guía de lectura de etiquetas nutricionales y lista de supermercado.',
-      'Recomendación de suplementación clínica personalizada.'
+      'Valoración completa e historia clínica.',
+      'Estudio de composición corporal InBody.',
+      'Estrategia nutricional personalizada.',
+      'Guía de suplementación personalizada.',
+      'Recomendación de movimiento adaptada a tu estilo de vida.',
+      'Ajustes continuos.',
+      'Seguimiento entre sesiones 1:1 por WhatsApp.'
     ]
   },
   {
-    id: 'plan-transformacion-3m',
-    title: 'Programa Transformación (3 Meses)',
-    subtitle: 'Acompañamiento Continuo & Reeducación Alimentaria',
+    id: 'transformacion-90-dias',
+    title: 'Programa Transformación 90 Días',
+    subtitle: 'Acompañamiento cercano para cambios sostenibles',
     modality: 'hibrido',
-    duration: '3 Meses (6 Citas)',
-    price: 160,
-    currency: 'USD',
+    duration: '90 días',
+    price: 3200,
+    currency: 'MXN',
     popular: true,
-    recommendedFor: 'El programa premium preferido para lograr cambios sostenibles en composición corporal, metabolismo y salud hormonal.',
+    savings: 400,
+    recommendedFor: 'Un programa estructurado para transformar tus hábitos, composición corporal y bienestar con seguimiento cercano.',
     features: [
-      'Consulta Inicial Completa de 60 minutos.',
-      '5 Consultas de seguimiento quincenales para evaluación de avances.',
-      'Ajustes continuos al menú según progresos y cambios de rutina.',
-      'Soporte directo y personalizado vía WhatsApp de Lunes a Viernes.',
-      'Guías adicionales de recetas, snacks, comer fuera de casa y manejo del estrés.',
-      'Descuentos exclusivos en talleres presenciales o nuevos e-books.'
+      '3 consultas completas presenciales.',
+      'Seguimiento quincenal por videollamada.',
+      'Ajustes continuos.',
+      'Seguimiento entre sesiones 1:1 por WhatsApp.'
     ]
   },
   {
-    id: 'nutricion-genetica',
-    title: 'Nutrición de Precisión Premium + Genética',
-    subtitle: 'El Plan más Avanzado, Personalizado y Científico',
-    modality: 'hibrido',
-    duration: '6 Citas + Reporte de ADN',
-    price: 290,
-    currency: 'USD',
-    recommendedFor: 'Para personas que quieren optimizar su salud con máxima precisión científica a partir de genética, laboratorios e historia clínica completa.',
+    id: 'wellness-integral-online-premium',
+    title: 'Consulta Wellness Integral Online Premium',
+    subtitle: 'La misma experiencia clínica, desde cualquier parte del mundo',
+    modality: 'online',
+    duration: 'Atención internacional 1:1',
+    price: null,
+    currency: 'MXN',
+    recommendedFor: 'Una consulta clínica personalizada por videollamada, disponible para ti estés donde estés.',
     features: [
-      'Análisis e interpretación de tu examen nutrigenético o bioquímico de laboratorio.',
-      'Plan nutricional ajustado a tus variantes genéticas de absorción y metabolismo.',
-      'Ciclado de carbohidratos y crononutrición avanzada.',
-      'Suplementación ortomolecular basada en necesidades de tus genes.',
-      '6 sesiones de seguimiento (presencial u online) para perfeccionar hábitos.'
+      'Videollamada HD.',
+      'Historia clínica y revisión de laboratorios.',
+      'Estrategia nutricional personalizada.',
+      'Guía de suplementación personalizada.',
+      'Recomendación de movimiento adaptada a tu estilo de vida.',
+      'Ajustes continuos.',
+      'Atención internacional 1:1 por WhatsApp.'
     ]
   }
 ];

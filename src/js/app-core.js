@@ -70,26 +70,32 @@ class KarlaApp {
       <!-- HERO -->
       ${this.renderHero()}
 
-      <!-- ABOUT SECTION -->
-      ${this.renderAboutSection()}
+      <!-- OUTCOMES SECTION -->
+      ${this.renderOutcomesSection()}
+
+      <!-- CONSULTATION VALUE SECTION -->
+      ${this.renderConsultationValueSection()}
 
       <!-- SERVICES SECTION -->
       ${this.renderServicesSection()}
 
-      <!-- EBOOKS SECTION -->
-      ${this.renderEbooksSection()}
-
-      <!-- CALCULATOR SECTION -->
+      <!-- HOW IT WORKS SECTION -->
       ${this.renderCalculatorSection()}
 
-      <!-- SALES CTA SECTION -->
-      ${this.renderSalesCtaSection()}
+      <!-- ABOUT SECTION -->
+      ${this.renderAboutSection()}
+
+      <!-- EBOOKS SECTION -->
+      ${this.renderEbooksSection()}
 
       <!-- TESTIMONIALS SECTION -->
       ${this.renderTestimonialsSection()}
 
       <!-- FAQ SECTION -->
       ${this.renderFaqSection()}
+
+      <!-- FINAL SALES CTA SECTION -->
+      ${this.renderSalesCtaSection()}
 
       <!-- FOOTER -->
       ${this.renderFooter()}
@@ -187,17 +193,17 @@ class KarlaApp {
             <div class="lg:col-span-7 space-y-8 text-left">
               <div class="space-y-4">
                 <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/75 backdrop-blur-sm border border-[#d0bdac]/70 text-[#6F5648] text-[11px] font-sans font-semibold uppercase tracking-[0.16em]">
-                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#8C6A57]"></i> Wellness Elevado y Sostenible
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-[#8C6A57]"></i> Nutrición clínica personalizada
                 </span>
-                <p class="font-sans text-sm sm:text-base uppercase tracking-[0.14em] font-semibold text-[#4A3930]">ENFOQUE CLINICO DE ALTO VALOR</p>
+                <p class="font-sans text-sm sm:text-base uppercase tracking-[0.14em] font-semibold text-[#4A3930]">TRANSFORMA TU SALUD DESDE LA RAÍZ</p>
                 <h1 class="font-serif text-5xl sm:text-6xl lg:text-[70px] font-bold text-[#4f0911] leading-[1.1] tracking-tight">
-                  Salud Integral & <br class="hidden sm:block"/>
-                  <span class="italic font-normal text-[#713132] font-serif">Nutrición Consciente</span>
+                  Nutrición Clínica <br class="hidden sm:block"/>
+                  <span class="italic font-normal text-[#713132] font-serif">de Precisión</span>
                 </h1>
               </div>
 
               <p class="font-sans text-base sm:text-lg text-[#713132]/90 leading-relaxed max-w-xl font-light">
-                Transforma tu salud con un método de precisión basado en tus genes, antecedentes hereditarios, estudios bioquímicos, historia clínica, historia dietética y nivel de actividad física. Sin planes genéricos: ciencia aplicada a tu realidad.
+                <strong class="font-semibold text-[#4f0911]">Tu cuerpo no necesita otra dieta.</strong> Necesita una estrategia diseñada exclusivamente para ti. Analizo tu salud de forma integral para resolver el problema desde la raíz e integrar nutrición clínica, deportiva y funcional con evidencia científica.
               </p>
 
               <!-- CTAs -->
@@ -205,8 +211,8 @@ class KarlaApp {
                 <button id="hero-booking-btn" class="px-8 py-4 bg-[#4f0911] hover:bg-[#713132] text-[#FAF9F6] font-sans text-xs uppercase tracking-widest font-bold rounded-full shadow-lg hover:shadow-xl transition-all flex items-center gap-2">
                   Agendar Valoración <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </button>
-                <a href="#e-books" class="px-8 py-4 border border-[#d0bdac] hover:bg-[#d0bdac]/10 text-[#4f0911] font-sans text-xs uppercase tracking-widest font-bold rounded-full transition-all">
-                  Ver Programas
+                <a href="#consultas" class="px-8 py-4 border border-[#d0bdac] hover:bg-[#d0bdac]/10 text-[#4f0911] font-sans text-xs uppercase tracking-widest font-bold rounded-full transition-all">
+                  Conocer Servicios
                 </a>
               </div>
 
@@ -214,11 +220,11 @@ class KarlaApp {
               <div class="pt-8 border-t border-[#d0bdac]/40 grid grid-cols-3 gap-4 sm:gap-6">
                 <div>
                   <h4 class="font-serif text-2xl sm:text-3xl font-bold text-[#4f0911]">+1,200</h4>
-                  <p class="font-sans text-[10px] sm:text-xs text-[#856654] uppercase tracking-wider font-semibold">Pacientes Felices</p>
+                  <p class="font-sans text-[10px] sm:text-xs text-[#856654] uppercase tracking-wider font-semibold">Transformaciones</p>
                 </div>
                 <div>
                   <h4 class="font-serif text-2xl sm:text-3xl font-bold text-[#4f0911]">100%</h4>
-                  <p class="font-sans text-[10px] sm:text-xs text-[#856654] uppercase tracking-wider font-semibold">Método Flexible</p>
+                  <p class="font-sans text-[10px] sm:text-xs text-[#856654] uppercase tracking-wider font-semibold">Estrategia Personalizada</p>
                 </div>
                 <div>
                   <h4 class="font-serif text-2xl sm:text-3xl font-bold text-[#4f0911]">Clínico</h4>
@@ -268,6 +274,77 @@ class KarlaApp {
     `;
   }
 
+  renderOutcomesSection() {
+    const outcomes = [
+      ['activity', 'Mejora tu composición corporal'],
+      ['heart-pulse', 'Reduce inflamación'],
+      ['dumbbell', 'Conserva y aumenta masa muscular'],
+      ['scale', 'Equilibra tu salud hormonal'],
+      ['chart-no-axes-combined', 'Optimiza tu salud metabólica'],
+      ['zap', 'Recupera tu energía'],
+      ['baby', 'Favorece tu fertilidad y un embarazo saludable'],
+      ['trophy', 'Mejora tu rendimiento deportivo'],
+      ['utensils', 'Disfruta comer sin restricciones'],
+    ];
+
+    return `
+      <section class="py-20 bg-[#FDFBF7] border-y border-[#d0bdac]/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+          <div class="max-w-3xl space-y-3 mb-12">
+            <span class="font-serif italic text-xl text-[#916066]">Resultados que puedes sentir</span>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-[#4f0911] leading-tight">¿Qué puedes lograr conmigo?</h2>
+            <p class="font-sans text-base text-[#713132]/90 leading-relaxed font-light">No transformo únicamente tu físico. Transformo la manera en que entiendes y cuidas tu cuerpo.</p>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            ${outcomes.map(([icon, text]) => `
+              <article class="flex items-center gap-3 rounded-2xl bg-[#FAF9F6] border border-[#d0bdac]/45 p-5 shadow-sm">
+                <span class="w-10 h-10 shrink-0 rounded-full bg-[#916066]/10 text-[#713132] flex items-center justify-center"><i data-lucide="${icon}" class="w-5 h-5"></i></span>
+                <p class="font-sans text-sm font-semibold text-[#4f0911] leading-snug">${text}</p>
+              </article>
+            `).join('')}
+          </div>
+          <p class="mt-10 max-w-4xl font-serif text-2xl sm:text-3xl text-[#4f0911] leading-snug">Cuando entiendes lo que tu cuerpo necesita, los resultados dejan de depender de la fuerza de voluntad.</p>
+        </div>
+      </section>
+    `;
+  }
+
+  renderConsultationValueSection() {
+    const inclusions = [
+      'Valoración clínica integral.',
+      'Interpretación de laboratorios y antecedentes.',
+      'Análisis de composición corporal.',
+      'Estrategia nutricional personalizada basada en crononutrición, horarios, ritmo de vida y objetivos.',
+      'Guía de suplementación basada en evidencia.',
+      'Recomendación de movimiento adaptada a tu estilo de vida y condición.',
+      'Educación nutricional para que entiendas tu cuerpo y no dependas de dietas para siempre.',
+    ];
+
+    return `
+      <section class="py-20 bg-[#FAF9F6]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start text-left">
+          <div class="lg:col-span-5 space-y-5 lg:sticky lg:top-28">
+            <span class="font-serif italic text-xl text-[#916066]">Una consulta diseñada para ti</span>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-[#4f0911] leading-tight">En mi consulta no recibes una dieta estándar.</h2>
+            <p class="font-sans text-lg text-[#713132] leading-relaxed font-light">Recibes una estrategia integral diseñada exclusivamente para ti.</p>
+            <button id="consultation-booking-btn" class="px-7 py-3.5 rounded-full bg-[#4f0911] hover:bg-[#713132] text-white font-sans text-xs uppercase tracking-widest font-bold transition-all">Agendar valoración</button>
+          </div>
+          <div class="lg:col-span-7 rounded-[32px] bg-white border border-[#d0bdac]/55 p-7 sm:p-9 shadow-sm">
+            <p class="font-sans text-[10px] text-[#856654] uppercase tracking-widest font-bold mb-6">Tu consulta incluye</p>
+            <ol class="space-y-5">
+              ${inclusions.map((item, index) => `
+                <li class="flex gap-4">
+                  <span class="font-serif text-2xl text-[#916066] leading-none">0${index + 1}</span>
+                  <p class="font-sans text-sm sm:text-base text-[#2C2421] leading-relaxed">${item}</p>
+                </li>
+              `).join('')}
+            </ol>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
   renderAboutSection() {
     return `
       <section id="sobre-mi" class="py-20 bg-[#FAF9F6]">
@@ -300,7 +377,7 @@ class KarlaApp {
                   </div>
                   <div>
                     <h5 class="font-serif font-bold text-sm text-[#4f0911]">Método Personalizado de Precisión</h5>
-                    <p class="font-sans text-[11px] text-[#856654]">Nutrigenómica, laboratorios y clínica integrados.</p>
+                    <p class="font-sans text-[11px] text-[#856654]">Laboratorios y enfoque clínico integrados.</p>
                   </div>
                 </div>
 
@@ -344,7 +421,7 @@ class KarlaApp {
                 <div class="space-y-2">
                   <h4 class="font-serif text-lg font-bold text-[#4f0911]">Especialidades que me distinguen</h4>
                   <ul class="space-y-2 pt-1">
-                    <li class="flex items-start gap-2 font-sans text-[12px] text-[#713132]/90 leading-relaxed"><i data-lucide="check" class="w-3.5 h-3.5 text-[#916066] shrink-0 mt-0.5"></i><span>Nutrigenómica y Nutrigenética - Universidad Complutense de Madrid.</span></li>
+                    <li class="flex items-start gap-2 font-sans text-[12px] text-[#713132]/90 leading-relaxed"><i data-lucide="check" class="w-3.5 h-3.5 text-[#916066] shrink-0 mt-0.5"></i><span>Nutrición clínica, deportiva y funcional.</span></li>
                     <li class="flex items-start gap-2 font-sans text-[12px] text-[#713132]/90 leading-relaxed"><i data-lucide="check" class="w-3.5 h-3.5 text-[#916066] shrink-0 mt-0.5"></i><span>Educadora en Diabetes - Federación Mexicana de Diabetes.</span></li>
                     <li class="flex items-start gap-2 font-sans text-[12px] text-[#713132]/90 leading-relaxed"><i data-lucide="check" class="w-3.5 h-3.5 text-[#916066] shrink-0 mt-0.5"></i><span>Nutrición en Síndrome Metabólico - Federación Nacional de Nutrición y Ciencia.</span></li>
                     <li class="flex items-start gap-2 font-sans text-[12px] text-[#713132]/90 leading-relaxed"><i data-lucide="check" class="w-3.5 h-3.5 text-[#916066] shrink-0 mt-0.5"></i><span>Nutrición Deportiva - Sociedad Internacional de Entrenadores Físicos y Deportivos.</span></li>
@@ -451,11 +528,14 @@ class KarlaApp {
 
                     <!-- Price label -->
                     <div class="space-y-0.5">
-                      <span class="font-sans text-[9px] text-[#856654]/70 uppercase tracking-widest font-bold">Inversión Programa</span>
-                      <div class="flex items-baseline gap-1">
-                        <span class="font-serif text-4xl font-bold text-[#4f0911]">$${plan.price}</span>
-                        <span class="font-sans text-xs text-[#856654] uppercase font-bold">${plan.currency}</span>
-                      </div>
+                      ${plan.price !== null ? `
+                        <span class="font-sans text-[9px] text-[#856654]/70 uppercase tracking-widest font-bold">Inversión del programa</span>
+                        <div class="flex items-baseline gap-1">
+                          <span class="font-serif text-4xl font-bold text-[#4f0911]">$${plan.price.toLocaleString('es-MX')}</span>
+                          <span class="font-sans text-xs text-[#856654] uppercase font-bold">${plan.currency}</span>
+                        </div>
+                        ${plan.savings ? `<p class="font-sans text-[10px] text-emerald-700 font-bold uppercase tracking-wide">Ahorras $${plan.savings.toLocaleString('es-MX')} MXN</p>` : ''}
+                      ` : '<div class="h-12" aria-label="Precio pendiente de confirmar"></div>'}
                     </div>
 
                     <!-- Recommended bullet and text -->
