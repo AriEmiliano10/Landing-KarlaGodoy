@@ -3,6 +3,8 @@ import {
   SERVICE_PLANS,
   TESTIMONIALS_DATA,
   FAQ_ITEMS,
+  INSTAGRAM_PROFILE,
+  INSTAGRAM_POSTS_DATA,
   WHATSAPP_NUMBER,
 } from './data.js';
 import { appHelpers } from './helpers.js';
@@ -85,6 +87,9 @@ class KarlaApp {
       <!-- ABOUT SECTION -->
       ${this.renderAboutSection()}
 
+      <!-- CURATED INSTAGRAM CONTENT -->
+      ${this.renderInstagramSection()}
+
       <!-- EBOOKS SECTION -->
       ${this.renderEbooksSection()}
 
@@ -163,7 +168,7 @@ class KarlaApp {
         </div>
 
         <!-- Mobile Navigation Menu -->
-        <div class="${this.state.mobileMenuOpen ? 'block' : 'hidden'} md:hidden bg-[#FAF9F6] border-b border-[#d0bdac]/40 p-4 space-y-3 shadow-lg absolute w-full left-0 top-full">
+        <div id="mobile-nav-menu" class="${this.state.mobileMenuOpen ? 'block' : 'hidden'} md:hidden bg-[#FAF9F6] border-b border-[#d0bdac]/40 p-4 space-y-3 shadow-lg absolute w-full left-0 top-full">
           <a href="#inicio" data-nav-key="inicio" class="nav-link mobile-nav-link block px-4 py-2 rounded-xl text-sm font-sans font-medium transition-all ${this.state.activeMenu === 'inicio' ? activeMobile : inactiveMobile}">Inicio</a>
           <a href="#sobre-mi" data-nav-key="metodo" class="nav-link mobile-nav-link block px-4 py-2 rounded-xl text-sm font-sans font-medium transition-all ${this.state.activeMenu === 'metodo' ? activeMobile : inactiveMobile}">Método</a>
           <a href="#consultas" data-nav-key="servicios" class="nav-link mobile-nav-link block px-4 py-2 rounded-xl text-sm font-sans font-medium transition-all ${this.state.activeMenu === 'servicios' ? activeMobile : inactiveMobile}">Servicios</a>
@@ -571,6 +576,105 @@ class KarlaApp {
             }).join('')}
           </div>
 
+        </div>
+      </section>
+    `;
+  }
+
+  renderInstagramPost(post, index) {
+    return `
+      <article class="group relative min-w-0 self-start overflow-hidden rounded-[26px] border border-[#d0bdac]/55 p-2.5 shadow-sm transition-shadow duration-300 sm:rounded-[34px] sm:p-3 xl:p-4 hover:shadow-xl" style="background-color: ${post.surface};">
+        <span class="absolute -right-3 -top-7 font-serif text-[96px] leading-none font-bold opacity-[0.07] sm:-right-5 sm:-top-10 sm:text-[128px]" style="color: ${post.accent};" aria-hidden="true">0${index + 1}</span>
+        <span class="absolute -left-16 top-16 h-32 w-32 rounded-full border opacity-20 sm:-left-12 sm:top-20 sm:h-36 sm:w-36" style="border-color: ${post.accent};" aria-hidden="true"></span>
+
+        <header class="relative flex min-h-[62px] items-center justify-between gap-3 px-1.5 pb-2.5 pt-0.5 sm:min-h-[72px] sm:gap-4 sm:px-2 sm:pb-3 sm:pt-1">
+          <div class="min-w-0">
+            <span class="block font-sans text-[9px] uppercase tracking-[0.18em] font-bold" style="color: ${post.accent};">${post.category}</span>
+            <span class="mt-1 block font-serif text-base italic leading-tight sm:text-lg" style="color: ${post.accent};">${post.eyebrow}</span>
+          </div>
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-white/80 shadow-sm sm:h-11 sm:w-11" style="color: ${post.accent};">
+            <i data-lucide="${post.icon}" class="h-[18px] w-[18px] sm:h-5 sm:w-5"></i>
+          </span>
+        </header>
+
+        <div class="kg-instagram-embed-shell relative overflow-hidden rounded-[20px] border border-white/80 bg-white shadow-[0_14px_34px_rgba(79,9,17,0.10)] sm:rounded-[25px] sm:shadow-[0_18px_45px_rgba(79,9,17,0.10)]">
+          <iframe
+            src="${post.embedUrl}"
+            title="Publicación de Instagram: ${post.title}"
+            class="kg-instagram-embed block h-[640px] w-full border-0 bg-white min-[390px]:h-[680px] md:h-[700px] xl:h-[720px] 2xl:h-[760px]"
+            loading="lazy"
+            allow="autoplay; encrypted-media; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+          ></iframe>
+        </div>
+
+        <footer class="relative px-1.5 pb-1.5 pt-4 sm:px-2 sm:pb-2 sm:pt-5">
+          <h3 class="font-serif text-lg font-bold leading-tight text-[#4f0911] sm:text-xl">${post.title}</h3>
+          <p class="mt-2 font-sans text-[11px] font-light leading-relaxed text-[#2C2421]/75 sm:text-xs">${post.description}</p>
+          <div class="mt-3 flex items-center justify-between gap-3 border-t border-white/70 pt-3 sm:mt-4 sm:gap-4 sm:pt-4">
+            <span class="font-sans text-[9px] font-bold uppercase tracking-[0.16em]" style="color: ${post.accent};">Publicación 0${index + 1}</span>
+            <a
+              href="${post.url}"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir en Instagram: ${post.title}"
+              class="inline-flex min-h-11 items-center gap-1.5 px-1 font-sans text-[9px] font-bold uppercase tracking-[0.14em] text-[#713132] hover:text-[#4f0911]"
+            >
+              Instagram
+              <i data-lucide="arrow-up-right" class="h-3.5 w-3.5"></i>
+            </a>
+          </div>
+        </footer>
+      </article>
+    `;
+  }
+
+  renderInstagramSection() {
+    return `
+      <section id="contenido" class="border-y border-[#d0bdac]/30 bg-[#FDFBF7] py-14 sm:py-20">
+        <div class="mx-auto max-w-7xl px-3 min-[360px]:px-4 sm:px-6 lg:px-8">
+          <div class="mb-8 grid grid-cols-1 items-end gap-6 sm:mb-12 lg:grid-cols-12 lg:gap-12">
+            <div class="space-y-3 text-left sm:space-y-4 lg:col-span-8">
+              <span class="block font-serif text-lg italic tracking-tight text-[#916066] sm:text-xl">
+                Del consultorio a tu día a día
+              </span>
+              <h2 class="font-serif text-[2rem] font-bold leading-[1.05] tracking-tight text-[#4f0911] sm:text-4xl lg:text-5xl">
+                Contenido para entender y cuidar tu cuerpo
+              </h2>
+              <p class="max-w-2xl font-sans text-[13px] font-light leading-relaxed text-[#713132]/85 sm:text-base">
+                Una selección de ideas que Karla comparte sobre bienestar, nutrición y movimiento desde una mirada cercana.
+              </p>
+            </div>
+
+            <div class="lg:col-span-4 lg:flex lg:justify-end">
+              <a
+                href="${INSTAGRAM_PROFILE.url}"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Ver el perfil oficial de Karla Godoy en Instagram"
+                class="group inline-flex w-full items-center justify-between gap-3 rounded-[20px] border border-[#d0bdac]/60 bg-white px-4 py-3.5 shadow-sm transition-all duration-300 sm:w-auto sm:gap-5 sm:rounded-[24px] sm:px-5 sm:py-4 lg:w-full hover:-translate-y-1 hover:shadow-md"
+              >
+                <span class="flex min-w-0 items-center gap-3">
+                  <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#4f0911] text-white sm:h-11 sm:w-11">
+                    <i data-lucide="camera" class="h-[18px] w-[18px] sm:h-5 sm:w-5"></i>
+                  </span>
+                  <span class="min-w-0">
+                    <span class="block font-sans text-[9px] uppercase tracking-[0.18em] text-[#856654] font-bold">Perfil oficial</span>
+                    <span class="block truncate font-serif text-base font-bold text-[#4f0911] sm:text-lg">${INSTAGRAM_PROFILE.handle}</span>
+                  </span>
+                </span>
+                <i data-lucide="arrow-up-right" class="h-5 w-5 shrink-0 text-[#916066] transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-5 xl:grid-cols-3">
+            ${INSTAGRAM_POSTS_DATA.map((post, index) => this.renderInstagramPost(post, index)).join('')}
+          </div>
+
+          <p class="mx-auto mt-7 max-w-3xl px-2 text-center font-sans text-[10px] leading-relaxed text-[#856654] sm:mt-8 sm:text-xs">
+            Selección editorial del perfil oficial. Las publicaciones se cargan desde Instagram al acercarse a esta sección. El contenido educativo no sustituye una valoración personalizada.
+          </p>
         </div>
       </section>
     `;

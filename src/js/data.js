@@ -238,4 +238,86 @@ export const FAQ_ITEMS = [
   }
 ];
 
+// Selección editorial manual del perfil oficial. No es un feed automático y
+// permite excluir publicaciones personales o afirmaciones que requieran validación.
+export const INSTAGRAM_PROFILE = {
+  handle: '@karlagagodoy1',
+  url: 'https://www.instagram.com/karlagagodoy1/',
+};
+
+export const INSTAGRAM_POSTS_DATA = [
+  {
+    id: 'tratamiento-y-nutricion',
+    category: 'Educación clínica',
+    eyebrow: 'Acompañamiento',
+    title: 'Tratamiento y nutrición, mejor juntos',
+    description: 'Una conversación sobre por qué los tratamientos médicos requieren seguimiento profesional y una estrategia nutricional individualizada.',
+    icon: 'stethoscope',
+    accent: '#4f0911',
+    surface: '#E8D5CA',
+    url: 'https://www.instagram.com/p/DYH3ma5Ryp1/',
+    embedUrl: 'https://www.instagram.com/p/DYH3ma5Ryp1/embed/captioned/',
+  },
+  {
+    id: 'hierro-y-energia',
+    category: 'Nutrición clínica',
+    eyebrow: 'Energía y hierro',
+    title: 'Cuando el cansancio merece atención',
+    description: 'Contenido educativo sobre fuentes de hierro y hábitos de alimentación. Ante síntomas, la valoración profesional es indispensable.',
+    icon: 'battery-medium',
+    accent: '#916066',
+    surface: '#F2E8DF',
+    url: 'https://www.instagram.com/p/DZ0R410kWnv/?img_index=1',
+    embedUrl: 'https://www.instagram.com/p/DZ0R410kWnv/embed/captioned/',
+  },
+  {
+    id: 'comida-preentrenamiento',
+    category: 'Nutrición deportiva',
+    eyebrow: 'Antes de entrenar',
+    title: 'Preparar también es rendir',
+    description: 'Ideas prácticas para elegir una comida previa al entrenamiento según el tipo de actividad, el horario y las necesidades personales.',
+    icon: 'activity',
+    accent: '#856654',
+    surface: '#E4E0C7',
+    url: 'https://www.instagram.com/p/DUouxmckRej/?img_index=1',
+    embedUrl: 'https://www.instagram.com/p/DUouxmckRej/embed/captioned/',
+  },
+  {
+    id: 'valoracion-corporal',
+    category: 'Valoración integral',
+    eyebrow: 'Composición corporal',
+    title: 'Medir para personalizar',
+    description: 'Una invitación a conocer el punto de partida y construir recomendaciones de alimentación y movimiento según cada contexto y objetivo.',
+    icon: 'scan-line',
+    accent: '#713132',
+    surface: '#E7D9DD',
+    url: 'https://www.instagram.com/p/DUGlyrQEmO-/?img_index=1',
+    embedUrl: 'https://www.instagram.com/p/DUGlyrQEmO-/embed/captioned/',
+  },
+  {
+    id: 'consejo-practico',
+    category: 'Hábitos conscientes',
+    eyebrow: 'Consejo práctico',
+    title: 'Pequeñas decisiones, cambios sostenibles',
+    description: 'Una pausa para revisar hábitos cotidianos y elegir acciones realistas que puedan mantenerse con constancia.',
+    icon: 'lightbulb',
+    accent: '#856654',
+    surface: '#EEE5D9',
+    url: 'https://www.instagram.com/p/DTy5vEPEUlr/?img_index=1',
+    embedUrl: 'https://www.instagram.com/p/DTy5vEPEUlr/embed/captioned/',
+  },
+  {
+    id: 'cuerpo-y-mente',
+    category: 'Bienestar integral',
+    eyebrow: 'Cuerpo y mente',
+    title: 'Tu mejor versión también se siente en paz',
+    description: 'Una reflexión sobre construir fortaleza física sin separar el cuidado, la conciencia y la salud mental.',
+    icon: 'heart-handshake',
+    accent: '#916066',
+    surface: '#F0E1E4',
+    url: 'https://www.instagram.com/p/DTbD-QjkeFY/?img_index=1',
+    embedUrl: 'https://www.instagram.com/p/DTbD-QjkeFY/embed/captioned/',
+  },
+];
+
 export const WHATSAPP_NUMBER = '5215551234567';

@@ -47,6 +47,24 @@ export const appHelpers = {
     navbar.classList.remove('bg-[#FAF9F6]/90', 'backdrop-blur-md', 'shadow-sm', 'py-3');
   },
 
+  updateActiveNavLinks() {
+    const desktopActive = ['bg-[#F2EFE9]', 'border', 'border-[#d0bdac]/70', 'text-[#4f0911]'];
+    const desktopInactive = ['text-[#713132]', 'hover:bg-[#F2EFE9]', 'hover:text-[#4f0911]'];
+    const mobileActive = ['bg-[#916066]/15', 'text-[#4f0911]'];
+    const mobileInactive = ['text-[#2c2421]', 'hover:bg-[#916066]/10', 'hover:text-[#4f0911]'];
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      const isMobile = link.classList.contains('mobile-nav-link');
+      const activeClasses = isMobile ? mobileActive : desktopActive;
+      const inactiveClasses = isMobile ? mobileInactive : desktopInactive;
+      const allStateClasses = [...new Set([...activeClasses, ...inactiveClasses])];
+      const isActive = link.getAttribute('data-nav-key') === this.state.activeMenu;
+
+      link.classList.remove(...allStateClasses);
+      link.classList.add(...(isActive ? activeClasses : inactiveClasses));
+    });
+  },
+
   setupGlobalScrollListener() {
     window.addEventListener('scroll', () => {
       if (this.scrollTicking) return;
@@ -58,7 +76,7 @@ export const appHelpers = {
         const nextActiveMenu = this.getActiveMenuFromScroll();
         if (nextActiveMenu !== this.state.activeMenu) {
           this.state.activeMenu = nextActiveMenu;
-          this.render();
+          this.updateActiveNavLinks();
         }
 
         this.scrollTicking = false;
@@ -230,7 +248,16 @@ export const appHelpers = {
 
     onClick('mobile-menu-toggle', () => {
       this.state.mobileMenuOpen = !this.state.mobileMenuOpen;
-      this.render();
+      const mobileMenu = document.getElementById('mobile-nav-menu');
+      const toggleButton = document.getElementById('mobile-menu-toggle');
+
+      mobileMenu?.classList.toggle('hidden', !this.state.mobileMenuOpen);
+      mobileMenu?.classList.toggle('block', this.state.mobileMenuOpen);
+
+      if (toggleButton) {
+        toggleButton.innerHTML = `<i data-lucide="${this.state.mobileMenuOpen ? 'x' : 'menu'}" class="w-6 h-6"></i>`;
+        window.lucide?.createIcons();
+      }
     });
 
     onClick('service-modality-online', () => this.setModality('online', true));
@@ -286,12 +313,20 @@ export const appHelpers = {
         const nextActive = link.getAttribute('data-nav-key');
         if (nextActive) {
           this.state.activeMenu = nextActive;
+          this.updateActiveNavLinks();
         }
 
         if (link.classList.contains('mobile-nav-link')) {
           this.state.mobileMenuOpen = false;
+          document.getElementById('mobile-nav-menu')?.classList.add('hidden');
+          document.getElementById('mobile-nav-menu')?.classList.remove('block');
+
+          const toggleButton = document.getElementById('mobile-menu-toggle');
+          if (toggleButton) {
+            toggleButton.innerHTML = '<i data-lucide="menu" class="w-6 h-6"></i>';
+            window.lucide?.createIcons();
+          }
         }
-        this.render();
       });
     });
   },

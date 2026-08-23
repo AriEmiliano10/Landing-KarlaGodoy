@@ -41,3 +41,38 @@ input[type="number"]::-webkit-outer-spin-button {
   border-color: var(--kg-color-accent) !important;
   box-shadow: var(--kg-focus-ring) !important;
 }
+
+/* Los fondos decorativos se extienden fuera de su sección, pero no forman
+   parte de una interacción horizontal de la landing. */
+html,
+body {
+  overflow-x: hidden;
+}
+
+/* Instagram conserva un ancho mínimo de 326 px; en teléfonos muy angostos se
+   escala únicamente el iframe para evitar desplazamiento horizontal. */
+@media (max-width: 359px) {
+  .kg-instagram-embed-shell {
+    height: 640px;
+  }
+
+  .kg-instagram-embed {
+    width: 326px;
+    max-width: none;
+    height: 820px;
+    transform: scale(0.78);
+    transform-origin: top left;
+  }
+}
+
+@media (min-width: 330px) and (max-width: 344px) {
+  .kg-instagram-embed {
+    transform: scale(0.84);
+  }
+}
+
+@media (min-width: 345px) and (max-width: 359px) {
+  .kg-instagram-embed {
+    transform: scale(0.9);
+  }
+}
