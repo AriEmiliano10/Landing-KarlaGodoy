@@ -115,7 +115,7 @@ export const SERVICE_PLANS = [
     subtitle: 'Valoración clínica y estrategia nutricional personalizada · Pagos mensuales',
     modality: 'presencial',
     duration: 'Consulta presencial',
-    price: null,
+    price: 1200,
     currency: 'MXN',
     recommendedFor: 'Empieza a entender lo que tu cuerpo necesita con una valoración integral diseñada para tu estilo de vida.',
     features: [
@@ -152,7 +152,7 @@ export const SERVICE_PLANS = [
     subtitle: 'La misma experiencia clínica, desde cualquier parte del mundo',
     modality: 'online',
     duration: 'Atención internacional 1:1',
-    price: null,
+    price: 890,
     currency: 'MXN',
     recommendedFor: 'Una consulta clínica personalizada por videollamada, disponible para ti estés donde estés.',
     features: [
@@ -293,30 +293,6 @@ export const INSTAGRAM_POSTS_DATA = [
     surface: '#E7D9DD',
     url: 'https://www.instagram.com/p/DUGlyrQEmO-/?img_index=1',
     embedUrl: 'https://www.instagram.com/p/DUGlyrQEmO-/embed/captioned/',
-  },
-  {
-    id: 'consejo-practico',
-    category: 'Hábitos conscientes',
-    eyebrow: 'Consejo práctico',
-    title: 'Pequeñas decisiones, cambios sostenibles',
-    description: 'Una pausa para revisar hábitos cotidianos y elegir acciones realistas que puedan mantenerse con constancia.',
-    icon: 'lightbulb',
-    accent: '#856654',
-    surface: '#EEE5D9',
-    url: 'https://www.instagram.com/p/DTy5vEPEUlr/?img_index=1',
-    embedUrl: 'https://www.instagram.com/p/DTy5vEPEUlr/embed/captioned/',
-  },
-  {
-    id: 'cuerpo-y-mente',
-    category: 'Bienestar integral',
-    eyebrow: 'Cuerpo y mente',
-    title: 'Tu mejor versión también se siente en paz',
-    description: 'Una reflexión sobre construir fortaleza física sin separar el cuidado, la conciencia y la salud mental.',
-    icon: 'heart-handshake',
-    accent: '#916066',
-    surface: '#F0E1E4',
-    url: 'https://www.instagram.com/p/DTbD-QjkeFY/?img_index=1',
-    embedUrl: 'https://www.instagram.com/p/DTbD-QjkeFY/embed/captioned/',
   },
 ];
 

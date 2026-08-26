@@ -357,44 +357,30 @@ class KarlaApp {
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             
             <!-- Left Grid: Editorial content and signature -->
-            <div class="lg:col-span-6 space-y-6 text-left">
-              <span class="font-serif italic text-xl text-[#916066] tracking-tight block">
-                Tu salud merece un enfoque de alta precisión
+            <div class="lg:col-span-6 space-y-7 text-left">
+              <span class="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-[#916066] block">
+                Sobre mí
               </span>
-              <h2 class="font-serif text-4xl sm:text-5xl font-bold text-[#4f0911] leading-tight">
-                Hola, soy Karla Godoy <br/>
-                <span class="italic font-normal text-[#713132]">Nutrióloga Clínica</span>
+              <h2 class="font-serif text-[2.75rem] sm:text-5xl lg:text-[3.5rem] font-semibold text-[#4f0911] leading-[1.02] tracking-[-0.025em]">
+                Hola, soy Karla Godoy
               </h2>
 
-              <p class="font-sans text-base text-[#2C2421]/90 leading-relaxed font-light">
-                Mi valor agregado es un método PERSONALIZADO que te evalúa de forma integral para diseñar una estrategia única para ti. Aquí no recibes una dieta estándar: recibes un servicio nutricional premium, clínico y de autor.
-              </p>
-              
-              <p class="font-sans text-base text-[#2C2421]/90 leading-relaxed font-light">
-                Tu plan se construye con base en tus genes, antecedentes hereditarios, estudios bioquímicos, historia clínica, historia dietética y nivel de actividad física para lograr resultados sostenibles, medibles y seguros.
-              </p>
+              <div class="max-w-[39rem] space-y-5 font-sans text-[15px] sm:text-base text-[#2C2421]/85 leading-[1.8] font-normal">
+                <p class="font-serif text-xl sm:text-2xl text-[#713132] leading-snug">
+                  Soy Karla, nutrióloga clínica especializada en nutrición integral, funcional y deportiva.
+                </p>
 
-              <!-- Icons row -->
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                <div class="flex items-start gap-3">
-                  <div class="w-10 h-10 rounded-full bg-[#FAF9F6] border border-[#d0bdac]/40 text-[#916066] flex items-center justify-center shrink-0">
-                    <i data-lucide="dna" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <h5 class="font-serif font-bold text-sm text-[#4f0911]">Método Personalizado de Precisión</h5>
-                    <p class="font-sans text-[11px] text-[#856654]">Laboratorios y enfoque clínico integrados.</p>
-                  </div>
-                </div>
+                <p>
+                  Me gusta conocer la historia detrás de cada persona, escuchar, analizar y entender qué está pasando antes de decidir qué hacer. Porque cada cuerpo, cada historia y cada objetivo son diferentes.
+                </p>
 
-                <div class="flex items-start gap-3">
-                  <div class="w-10 h-10 rounded-full bg-[#FAF9F6] border border-[#d0bdac]/40 text-[#916066] flex items-center justify-center shrink-0">
-                    <i data-lucide="gem" class="w-5 h-5"></i>
-                  </div>
-                  <div>
-                    <h5 class="font-serif font-bold text-sm text-[#4f0911]">Servicio Premium 1:1</h5>
-                    <p class="font-sans text-[11px] text-[#856654]">Estrategia exclusiva, seguimiento cercano y humano.</p>
-                  </div>
-                </div>
+                <p>
+                  Trabajo especialmente con mujeres que quieren verse y sentirse mejor, mejorar su composición corporal, optimizar su salud y rendimiento, sin sacrificar su bienestar en el proceso.
+                </p>
+
+                <p class="border-l-2 border-[#916066]/60 pl-5 font-medium text-[#4f0911]">
+                  Porque para mí, verte mejor es importante. Pero que tu cuerpo esté funcionando mejor también lo es.
+                </p>
               </div>
 
               <!-- Button CTA -->
@@ -668,7 +654,7 @@ class KarlaApp {
             </div>
           </div>
 
-          <div class="grid grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-5 xl:grid-cols-3">
+          <div class="mx-auto grid max-w-5xl grid-cols-1 items-start gap-6 md:grid-cols-2 md:gap-6">
             ${INSTAGRAM_POSTS_DATA.map((post, index) => this.renderInstagramPost(post, index)).join('')}
           </div>
 

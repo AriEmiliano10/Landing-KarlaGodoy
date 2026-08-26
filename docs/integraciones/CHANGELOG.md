@@ -1,5 +1,18 @@
 # Registro de cambios - Integraciones
 
+## 2026-08-25 - Selección final reducida a cuatro posts
+
+- **Objetivo:** ajustar la integración editorial a la cantidad de publicaciones solicitada por la clienta.
+- **Estado anterior:** seis embeds oficiales con carga diferida y cuadrícula de hasta tres columnas.
+- **Archivos modificados:** `src/js/data.js`, `src/js/app-core.js`, `docs/landing/CHANGELOG.md`, `docs/integraciones/CHANGELOG.md` y `docs/alcance/ESTADO-DEL-PROYECTO.md`.
+- **Cambios realizados:** se redujo la selección a cuatro posts y se reorganizó su presentación en una cuadrícula centrada de dos columnas.
+- **Decisiones técnicas:** conservar las cuatro publicaciones con mayor relación directa con los servicios y especialidades presentados en la landing; mantener URLs, embeds oficiales, carga diferida y fallback externo.
+- **Pruebas realizadas:** comprobación estática de cantidad, identificadores, destinos y URLs de embed; revisión de la cuadrícula responsive.
+- **Resultado:** quedan cuatro fuentes editoriales únicas sin cambios en el mecanismo de integración.
+- **Pendientes:** verificar carga real, rendimiento y diseño responsive; definir consentimiento y privacidad para Meta.
+- **Riesgos conocidos:** dependencia externa de Instagram y solicitudes automáticas de terceros al aproximarse a la sección.
+- **Debe confirmar la clienta:** selección y orden definitivos de los cuatro posts.
+
 ## 2026-08-23 - Auditoría documental inicial
 
 - **Objetivo:** verificar integraciones y SEO incluidos en la cotización.

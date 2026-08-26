@@ -2,6 +2,45 @@
 
 El historial anterior de la landing permanece en `../../CHANGELOG.md`. No se copia ni reemplaza para evitar bifurcar el registro histórico.
 
+## 2026-08-25 - Curaduría de cuatro posts de Instagram
+
+- **Objetivo:** reducir la sección de Instagram a las cuatro publicaciones solicitadas por la clienta y adaptar su composición visual.
+- **Estado anterior:** seis embeds distribuidos en una, dos o tres columnas según el ancho disponible.
+- **Archivos modificados:** `src/js/data.js`, `src/js/app-core.js`, `docs/landing/CHANGELOG.md`, `docs/integraciones/CHANGELOG.md` y `docs/alcance/ESTADO-DEL-PROYECTO.md`.
+- **Cambios realizados:** se conservaron los posts sobre tratamiento y nutrición, hierro y energía, comida preentrenamiento y valoración corporal; se retiraron de la selección los dos posts más generales. La cuadrícula ahora usa una columna en móvil y dos columnas centradas desde tableta.
+- **Decisiones técnicas:** priorizar variedad clínica, práctica, deportiva y de valoración; limitar la cuadrícula a `max-w-5xl` para formar un bloque 2 × 2 equilibrado en escritorio.
+- **Pruebas realizadas:** conteo estático de objetos, URLs e iframes generados; revisión de clases responsive y numeración consecutiva.
+- **Resultado:** la fuente contiene cuatro publicaciones y el renderizado generará cuatro tarjetas numeradas del 01 al 04 en una composición simétrica.
+- **Pendientes:** prueba visual y de carga real en escritorio y móvil; consentimiento/cookies para contenido de Meta.
+- **Riesgos conocidos:** los cuatro iframes siguen dependiendo de Instagram y pueden afectar privacidad, disponibilidad y rendimiento.
+- **Debe confirmar la clienta:** aprobación de los cuatro temas conservados y del orden editorial.
+
+## 2026-08-25 - Precios confirmados de consultas
+
+- **Objetivo:** publicar los costos facilitados por la clienta para las consultas presencial y en línea.
+- **Estado anterior:** ambas consultas mostraban un espacio reservado porque su precio estaba pendiente de confirmar.
+- **Archivos modificados:** `src/js/data.js`, `docs/landing/CHANGELOG.md` y `docs/alcance/ESTADO-DEL-PROYECTO.md`.
+- **Cambios realizados:** la consulta presencial quedó en $1,200 MXN y la consulta en línea en $890 MXN; las cifras se muestran desde la fuente centralizada tanto en las tarjetas como en el selector del modal.
+- **Decisiones técnicas:** conservar los precios como valores numéricos en `SERVICE_PLANS` para reutilizar el formato monetario existente y evitar duplicaciones.
+- **Pruebas realizadas:** búsqueda de precios y modalidades, revisión de los consumidores de `SERVICE_PLANS` y comprobación de formato con `toLocaleString('es-MX')`.
+- **Resultado:** los valores configurados producirán `$1,200 MXN` y `$890 MXN` en las tarjetas y opciones del modal.
+- **Pendientes:** verificación visual y funcional en navegador; confirmar condiciones de pago, vigencia y alcance exacto de cada consulta.
+- **Riesgos conocidos:** el programa de 90 días conserva su precio independiente de $3,200 MXN y su ahorro publicado, ambos pendientes de confirmación.
+- **Debe confirmar la clienta:** vigencia de los precios, impuestos o facturación, formas de pago y política de cambios o cancelaciones.
+
+## 2026-08-25 - Nueva presentación personal en Sobre mí
+
+- **Objetivo:** incorporar el texto de presentación solicitado por la clienta y mejorar su jerarquía tipográfica.
+- **Estado anterior:** introducción enfocada en un método de alta precisión, con dos párrafos técnicos y dos destacados de servicio.
+- **Archivos modificados:** `src/js/app-core.js` y `docs/landing/CHANGELOG.md`.
+- **Cambios realizados:** se sustituyó la introducción por cuatro párrafos en primera persona; se simplificó el encabezado y se retiraron los dos destacados que repetían el contenido anterior.
+- **Decisiones técnicas:** conservar las familias tipográficas existentes; usar serif solo para el título y la frase introductoria, sans serif para lectura prolongada y un acento lateral para el cierre.
+- **Pruebas realizadas:** revisión estática del contenido, de la estructura HTML generada y de las clases responsive; búsqueda de los textos reemplazados y nuevos.
+- **Resultado:** el nuevo contenido está completo y la estructura conserva sus variantes móvil y escritorio. No fue posible validar con Node porque no está instalado, ni ejecutar la landing porque el equipo no dispone de un servidor local compatible y el navegador bloquea URLs `file://`.
+- **Pendientes:** ejecución visual y consola en escritorio y móvil; aprobación visual y editorial de la clienta; prueba en dispositivos físicos.
+- **Riesgos conocidos:** las credenciales mostradas en las tarjetas contiguas siguen pendientes de verificación documental.
+- **Debe confirmar la clienta:** aprobación final del texto, jerarquía tipográfica y permanencia de las tarjetas profesionales.
+
 ## 2026-08-23 - Auditoría documental inicial
 
 - **Objetivo:** documentar el estado real de la landing sin cambiar diseño, contenido o comportamiento.
