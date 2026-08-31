@@ -3,6 +3,33 @@ import {
 } from './data.js';
 
 export const modalViews = {
+  renderPanelAccessModal() {
+    return `
+      <div class="fixed inset-0 z-[60] flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm animate-fade-in" role="dialog" aria-modal="true" aria-labelledby="panel-access-title">
+        <div class="w-full max-w-md overflow-hidden rounded-[28px] border border-[#d0bdac] bg-[#FAF9F6] shadow-2xl">
+          <div class="flex items-center justify-between bg-[#2D2A26] p-5 text-white">
+            <div class="flex items-center gap-3">
+              <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10"><i data-lucide="layout-dashboard" class="h-5 w-5 text-[#e9c986]"></i></span>
+              <div><p id="panel-access-title" class="font-serif text-xl font-bold">Panel administrativo</p><p class="font-sans text-[9px] uppercase tracking-widest text-white/60">Acceso de demostración</p></div>
+            </div>
+            <button id="close-panel-access-modal" type="button" class="rounded-full p-2 text-white/60 transition hover:bg-white/10 hover:text-white" aria-label="Cerrar acceso al panel"><i data-lucide="x" class="h-5 w-5"></i></button>
+          </div>
+          <div class="space-y-5 p-6 sm:p-7">
+            <div class="rounded-2xl border border-[#e9c986]/70 bg-[#fff8e8] p-4 text-xs leading-relaxed text-[#713132]"><i data-lucide="sparkles" class="mr-1 inline h-4 w-4"></i><strong>Vista para aprobación:</strong> este acceso no autentica ni guarda datos. Solo permite mostrar el diseño del panel.</div>
+            <div class="space-y-4" aria-label="Campos de inicio de sesión de muestra">
+              <label class="block text-[10px] font-bold uppercase tracking-widest text-[#856654]">Correo de administración<input type="email" disabled placeholder="correo@ejemplo.com" class="mt-2 w-full cursor-not-allowed rounded-2xl border border-[#d0bdac] bg-white px-4 py-3 text-sm text-[#856654] opacity-75"></label>
+              <label class="block text-[10px] font-bold uppercase tracking-widest text-[#856654]">Contraseña<input type="password" disabled placeholder="••••••••" class="mt-2 w-full cursor-not-allowed rounded-2xl border border-[#d0bdac] bg-white px-4 py-3 text-sm text-[#856654] opacity-75"></label>
+            </div>
+            <div class="flex flex-col gap-3 border-t border-[#d0bdac]/40 pt-5 sm:flex-row">
+              <button id="open-panel-demo-btn" type="button" class="flex-1 rounded-full bg-[#4f0911] px-5 py-3.5 text-xs font-bold uppercase tracking-widest text-white shadow-md transition hover:bg-[#713132]">Ver panel de demostración</button>
+              <button id="cancel-panel-access-btn" type="button" class="rounded-full border border-[#d0bdac] px-5 py-3.5 text-xs font-bold uppercase tracking-widest text-[#4f0911] transition hover:bg-[#d0bdac]/10">Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  },
+
   renderBookingModal() {
     const s = this.state;
     const selectedPlan = s.preselectedPlan || SERVICE_PLANS[0];

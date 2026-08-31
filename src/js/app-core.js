@@ -25,6 +25,7 @@ class KarlaApp {
       previewEbook: null,
       whatsappOpen: false,
       mobileMenuOpen: false,
+      isPanelAccessOpen: false,
       activeMenu: 'inicio',
       faqIndexOpen: null,
       bookingForm: this.getDefaultBookingForm(),
@@ -116,6 +117,9 @@ class KarlaApp {
 
       <!-- EBOOK DETAILS MODAL -->
       ${this.state.previewEbook ? this.renderEbookModal() : ''}
+
+      <!-- PANEL DEMO ACCESS MODAL -->
+      ${this.state.isPanelAccessOpen ? this.renderPanelAccessModal() : ''}
     `;
 
     // Inicializar iconos solo si la libreria ya esta disponible.
@@ -155,6 +159,9 @@ class KarlaApp {
 
             <!-- HT Buttons -->
             <div class="hidden md:flex items-center gap-4">
+              <button id="nav-panel-access-btn" class="px-4 py-3 rounded-full text-[#4f0911] hover:bg-[#d0bdac]/20 font-sans text-[10px] uppercase tracking-widest font-bold transition-all">
+                Acceso panel
+              </button>
               <button id="nav-booking-btn" class="px-6 py-3 rounded-full bg-[#4f0911] hover:bg-[#713132] text-[#FAF9F6] font-sans text-xs uppercase tracking-widest font-bold transition-all shadow-md">
                 Agendar Cita
               </button>
@@ -175,6 +182,9 @@ class KarlaApp {
           <a href="#e-books" data-nav-key="paquetes" class="nav-link mobile-nav-link block px-4 py-2 rounded-xl text-sm font-sans font-medium transition-all ${this.state.activeMenu === 'paquetes' ? activeMobile : inactiveMobile}">Programas</a>
           <a href="#agenda-cta" data-nav-key="agenda" class="nav-link mobile-nav-link block px-4 py-2 rounded-xl text-sm font-sans font-medium transition-all ${this.state.activeMenu === 'agenda' ? activeMobile : inactiveMobile}">Agenda</a>
           <div class="pt-2 border-t border-[#d0bdac]/30 flex flex-col gap-2">
+            <button id="mobile-panel-access-btn" class="w-full text-center py-3 border border-[#4f0911]/20 text-[#4f0911] text-xs font-bold uppercase tracking-widest rounded-full">
+              Acceso al panel
+            </button>
             <button id="mobile-booking-btn" class="w-full text-center py-3 bg-[#4f0911] text-[#FAF9F6] text-xs font-bold uppercase tracking-widest rounded-full shadow-md">
               Agendar Cita
             </button>

@@ -91,6 +91,19 @@
 - **Riesgos conocidos:** un archivo sensible agregado con otro nombre o fuera de `docs/alcance/` no quedaría cubierto por esta regla específica.
 - **Debe confirmar la clienta:** cualquier autorización futura para publicar documentos contractuales o datos personales.
 
+## 2026-08-28 - Reubicación local y exclusión de la cotización
+
+- **Objetivo:** corregir la ubicación del documento comercial para mantenerlo fuera del repositorio público.
+- **Estado anterior:** `docs/Cotización.pdf` estaba fuera de la ruta cubierta por `.gitignore`.
+- **Archivos modificados:** `docs/Cotización.pdf` → `docs/alcance/Cotización.pdf`, `docs/DECISIONES.md` y `docs/alcance/ESTADO-DEL-PROYECTO.md`.
+- **Cambios realizados:** se reubicó el PDF local sin alterar su contenido; la ruta resultante coincide con la documentación y con la exclusión `docs/alcance/*.pdf`.
+- **Decisiones técnicas:** conservar el documento únicamente en local y no ampliar las reglas de exclusión a otros documentos sin una revisión específica.
+- **Pruebas realizadas:** verificación de que el destino no existía antes del movimiento y confirmación posterior de ruta, nombre y tamaño del archivo.
+- **Resultado:** la cotización queda bajo la carpeta y regla de privacidad previstas.
+- **Pendientes:** confirmar la información comercial que se usará para decisiones contractuales; el PDF no se publicará sin autorización expresa.
+- **Riesgos conocidos:** el repositorio no está disponible localmente para comprobar el estado de Git en este entorno.
+- **Debe confirmar la clienta:** cualquier autorización futura para publicar la cotización o sus datos.
+
 ## Decisiones pendientes
 
 1. Confirmar si el total contractual es $39,800 MXN o $49,800 MXN; la suma por fases y el total impreso difieren por $10,000 MXN.

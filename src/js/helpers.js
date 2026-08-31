@@ -32,6 +32,21 @@ export const appHelpers = {
     this.render();
   },
 
+  openPanelAccessModal() {
+    this.state.mobileMenuOpen = false;
+    this.state.isPanelAccessOpen = true;
+    this.render();
+  },
+
+  closePanelAccessModal() {
+    this.state.isPanelAccessOpen = false;
+    this.render();
+  },
+
+  openPanelDemo() {
+    window.location.assign('./panel/');
+  },
+
   updateNavbarStyle() {
     const navbar = document.getElementById('navbar-container');
     if (!navbar) return;
@@ -241,6 +256,8 @@ export const appHelpers = {
     ['nav-booking-btn', 'hero-booking-btn', 'consultation-booking-btn', 'about-booking-btn', 'sales-cta-booking-btn', 'mobile-sticky-booking-btn']
       .forEach(id => onClick(id, () => this.handleOpenBooking()));
 
+    ['nav-panel-access-btn', 'mobile-panel-access-btn'].forEach(id => onClick(id, () => this.openPanelAccessModal()));
+
     onClick('mobile-booking-btn', () => {
       this.state.mobileMenuOpen = false;
       this.handleOpenBooking();
@@ -269,6 +286,8 @@ export const appHelpers = {
     });
 
     ['close-booking-modal', 'cancel-booking-btn'].forEach(id => onClick(id, () => this.closeBookingModal()));
+    ['close-panel-access-modal', 'cancel-panel-access-btn'].forEach(id => onClick(id, () => this.closePanelAccessModal()));
+    onClick('open-panel-demo-btn', () => this.openPanelDemo());
     onClick('modal-modality-online', () => this.setModality('online'));
     onClick('modal-modality-presencial', () => this.setModality('presencial'));
 

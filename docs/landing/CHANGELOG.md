@@ -2,6 +2,19 @@
 
 El historial anterior de la landing permanece en `../../CHANGELOG.md`. No se copia ni reemplaza para evitar bifurcar el registro histórico.
 
+## 2026-08-31 - Acceso visual al panel desde la landing
+
+- **Objetivo:** permitir presentar desde la landing el acceso y la propuesta visual del panel en GitHub Pages.
+- **Estado anterior:** el panel de demostración solo era accesible mediante su ruta directa.
+- **Archivos modificados:** `src/js/app-core.js`, `src/js/helpers.js`, `src/js/modals.js`, `docs/landing/CHANGELOG.md`, `docs/panel/CHANGELOG.md` y `docs/alcance/ESTADO-DEL-PROYECTO.md`.
+- **Cambios realizados:** se añadieron acciones de “Acceso panel” en navegación de escritorio y móvil, y un modal de inicio de sesión de muestra que navega a `./panel/`.
+- **Decisiones técnicas:** los campos están deshabilitados y no se recopilan ni validan credenciales; la ruta relativa mantiene compatibilidad con despliegues de GitHub Pages bajo subruta.
+- **Pruebas realizadas:** validación estática de módulos, identificadores de eventos y destino relativo.
+- **Resultado:** la landing puede enlazar a la propuesta visual del panel sin afirmar que existe autenticación.
+- **Pendientes:** aprobar el flujo visual y, en una fase posterior, definir autenticación, autorización, privacidad y backend.
+- **Riesgos conocidos:** el panel continuará siendo público mientras no se implemente seguridad real; no debe usarse para datos de pacientes.
+- **Debe confirmar la clienta:** etiqueta, ubicación y flujo final del acceso al panel.
+
 ## 2026-08-25 - Curaduría de cuatro posts de Instagram
 
 - **Objetivo:** reducir la sección de Instagram a las cuatro publicaciones solicitadas por la clienta y adaptar su composición visual.

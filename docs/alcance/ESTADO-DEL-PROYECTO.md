@@ -16,9 +16,9 @@ Auditoría inicial: 2026-08-23. Los estados describen evidencia verificable en l
 | 3 | Selección de fecha y hora | Simulación | Fecha local por defecto y seis horarios estáticos; `src/js/helpers.js`, `src/js/modals.js` | Disponibilidad real, zona horaria, bloqueos y validaciones | Backend y calendario | Horarios, excepciones y zona horaria |
 | 3 | Evitar citas duplicadas | No iniciado | Sin evidencia | Reglas de concurrencia y persistencia | Backend/base de datos | Política de reservas |
 | 3 | Registro automático de pacientes | No iniciado | Sin base de datos ni API | Modelo de datos, consentimiento y seguridad | Backend/base de datos | Datos obligatorios y retención |
-| 3 | Administración de disponibilidad | No iniciado | Sin interfaz ni lógica administrativa | CRUD de horarios y excepciones | Autenticación, backend y base de datos | Roles y reglas de agenda |
-| 3 | Panel privado: pacientes, citas, agenda y formularios | No iniciado | Sin archivos de panel | Diseño, autenticación, autorización, APIs y vistas | Backend/base de datos | Usuarios, roles y procesos |
-| 3 | Panel: estadísticas e información del sitio | No iniciado | Sin evidencia | Métricas, edición y permisos | Panel y modelo de datos | Indicadores y contenido editable |
+| 3 | Administración de disponibilidad | Interfaz visual | Configurador local de siete días con bloques horarios editables; `src/panel/app.js`, `src/panel/dashboard.js`, `src/styles/panel.css` | Persistencia, zona horaria, reglas, excepciones y publicación segura de disponibilidad | Autenticación, backend y base de datos | Roles, horarios, pausas y reglas de agenda |
+| 3 | Panel privado: pacientes, citas, agenda y formularios | Interfaz visual | Propuesta modular navegable con acceso de muestra, filtros, búsqueda anonimizada, interruptores locales y notificaciones; `panel/index.html`, `src/panel/*`, `src/styles/panel.css`, `src/js/app-core.js`, `src/js/helpers.js`, `src/js/modals.js` | Validar vistas y después definir autenticación, autorización, APIs y datos | Backend/base de datos | Usuarios, roles, procesos y campos visibles |
+| 3 | Panel: estadísticas e información del sitio | Interfaz visual | Tarjetas, checklist, alertas, preferencias y módulos de contenido ilustrativos en la propuesta de panel; `src/panel/dashboard.js` | Confirmar indicadores, edición, permisos y conexión de datos | Panel y modelo de datos | Indicadores y contenido editable |
 | 4 | Catálogo de productos digitales | Interfaz visual | Cuatro e-books con detalle y precios; `src/js/data.js`, `src/js/app-core.js`, `src/js/modals.js` | Confirmar existencia, contenido, precios y derechos | Productos reales | Catálogo y precios autorizados |
 | 4 | Compra en línea | No iniciado | El botón solo abre WhatsApp | Checkout, órdenes, impuestos, estados y recibos | Proveedor de pago y backend | Proveedor, moneda, facturación y reembolsos |
 | 4 | Descarga automática | No iniciado | La FAQ afirma descarga/código, pero no existe implementación | Almacenamiento protegido y entrega autorizada | Backend, pagos y archivos reales | Productos y reglas de acceso |
@@ -71,3 +71,16 @@ Auditoría inicial: 2026-08-23. Los estados describen evidencia verificable en l
 - El repositorio `AriEmiliano10/Landing-KarlaGodoy` es público y usa `main` como rama predeterminada.
 - Se conservó el historial remoto existente; no se utilizará `force push`.
 - El árbol remoto previo no contenía la cotización y `docs/alcance/*.pdf` quedó excluido del versionado local.
+
+## 2026-08-28 - Corrección de ubicación de la cotización
+
+- **Objetivo:** mantener la fuente comercial local dentro de la ruta protegida prevista por el proyecto.
+- **Estado anterior:** el PDF estaba en `docs/Cotización.pdf`, fuera del patrón de exclusión documentado.
+- **Archivos modificados:** `docs/Cotización.pdf` → `docs/alcance/Cotización.pdf`, `docs/DECISIONES.md` y este archivo.
+- **Cambios realizados:** se reubicó el archivo sin modificar su contenido ni los estados de las fases.
+- **Decisiones técnicas:** se conserva `docs/alcance/*.pdf` como regla específica de privacidad; no se modificó código ni alcance funcional.
+- **Pruebas realizadas:** destino verificado como inexistente antes del movimiento; ruta y tamaño del PDF confirmados después.
+- **Resultado:** la fuente comercial vuelve a coincidir con la ruta indicada en la documentación y queda cubierta por la regla de exclusión local.
+- **Pendientes:** verificar el estado de exclusión en Git cuando el repositorio esté disponible localmente.
+- **Riesgos conocidos:** el entorno reporta que la carpeta actual no es un repositorio Git, por lo que no fue posible ejecutar `git status`.
+- **Debe confirmar la clienta:** no publicar el PDF sin autorización expresa y revisión de privacidad.
