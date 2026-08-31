@@ -85,7 +85,7 @@ export const modalViews = {
                 <label class="block text-[10px] font-sans font-bold text-[#856654] uppercase tracking-widest mb-2.5">
                   2. Elige tu modalidad
                 </label>
-                <div class="grid grid-cols-2 gap-35">
+                <div class="grid grid-cols-2 gap-3">
                   <button 
                     type="button"
                     id="modal-modality-online"

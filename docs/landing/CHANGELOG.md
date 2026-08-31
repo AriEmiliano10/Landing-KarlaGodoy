@@ -2,6 +2,19 @@
 
 El historial anterior de la landing permanece en `../../CHANGELOG.md`. No se copia ni reemplaza para evitar bifurcar el registro histórico.
 
+## 2026-08-31 - Revisión responsive para teléfonos
+
+- **Objetivo:** evitar desbordamientos de los elementos flotantes y asegurar una separación cómoda en pantallas de teléfono.
+- **Estado anterior:** la landing era adaptable, pero el widget de WhatsApp conservaba márgenes y un ancho fijo pensados para pantallas más amplias.
+- **Archivos modificados:** `src/styles/main.css`, `src/js/modals.js`, `docs/landing/CHANGELOG.md`, `docs/panel/CHANGELOG.md` y `docs/alcance/ESTADO-DEL-PROYECTO.md`.
+- **Cambios realizados:** el panel informativo de WhatsApp se limita al ancho útil en móvil; el selector de modalidad del modal de cita usa una separación válida entre sus dos opciones.
+- **Decisiones técnicas:** se mantuvo la composición y el contenido; los ajustes se hacen con clases responsive y no añaden dependencias ni comportamiento nuevo.
+- **Pruebas realizadas:** validación estática de las clases, estructura de modales y anchos para 320, 360, 390 y 414 px.
+- **Resultado:** los elementos flotantes y el selector de modalidad conservan márgenes y proporciones en teléfonos estrechos.
+- **Pendientes:** revisión visual manual en navegador/dispositivo físico antes de declararlo probado.
+- **Riesgos conocidos:** no fue posible ejecutar una inspección gráfica automatizada porque no hay navegador ni emulador disponible en el equipo.
+- **Debe confirmar la clienta:** aprobación visual en los dispositivos objetivo.
+
 ## 2026-08-31 - Acceso visual al panel desde la landing
 
 - **Objetivo:** permitir presentar desde la landing el acceso y la propuesta visual del panel en GitHub Pages.

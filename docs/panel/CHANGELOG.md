@@ -1,5 +1,18 @@
 # Registro de cambios - Panel administrativo
 
+## 2026-08-31 - Revisión responsive para teléfonos
+
+- **Objetivo:** preservar una lectura cómoda del panel en pantallas de 320 a 414 px.
+- **Estado anterior:** las vistas eran adaptables, pero la agenda dependía de una tabla horizontal y los campos de horarios podían quedar demasiado comprimidos.
+- **Archivos modificados:** `src/panel/dashboard.js`, `src/styles/panel.css`, `docs/panel/CHANGELOG.md`, `docs/landing/CHANGELOG.md` y `docs/alcance/ESTADO-DEL-PROYECTO.md`.
+- **Cambios realizados:** la agenda se reordena como tarjetas compactas en móvil, conservando hora, datos, estado y acción; los campos desde/hasta se apilan y el botón de eliminar ocupa una columna propia; los avisos flotantes respetan el ancho útil.
+- **Decisiones técnicas:** las tablas de pacientes mantienen desplazamiento horizontal intencional para no ocultar columnas; la agenda, de consulta más frecuente, se adapta sin desplazamiento lateral.
+- **Pruebas realizadas:** validación estática de la estructura generada, reglas CSS y puntos de corte de 640 y 480 px.
+- **Resultado:** no hay compresión de celdas en agenda ni de controles de horario en teléfonos estrechos.
+- **Pendientes:** revisión visual manual en navegador/dispositivo físico antes de marcar el prototipo como probado.
+- **Riesgos conocidos:** no hay navegador ni emulador instalado en el entorno para tomar capturas de las medidas objetivo.
+- **Debe confirmar la clienta:** priorización final entre tabla desplazable o tarjetas para el directorio de pacientes.
+
 ## 2026-08-31 - Configurador visual de horarios semanales
 
 - **Objetivo:** mostrar cómo la administración podría definir días y bloques de atención antes de conectar el sistema de citas.

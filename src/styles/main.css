@@ -49,6 +49,15 @@ body {
   overflow-x: hidden;
 }
 
+/* En teléfonos pequeños, los elementos flotantes mantienen márgenes útiles
+   sin invadir el CTA fijo de la landing. */
+@media (max-width: 359px) {
+  #tpl-whatsapp-widget,
+  #whatsapp-info-panel {
+    max-width: calc(100vw - 2rem);
+  }
+}
+
 /* Instagram conserva un ancho mínimo de 326 px; en teléfonos muy angostos se
    escala únicamente el iframe para evitar desplazamiento horizontal. */
 @media (max-width: 359px) {
