@@ -1,0 +1,1266 @@
+/* ==========================================================================
+   EBOOK EDITORIAL - KARLA GODOY | MÉTODO BALANCE
+   "HAGO TODO BIEN Y NO PIERDO GRASA"
+   Manual de Identidad Visual Oficial
+   ========================================================================== */
+
+/* Tipografías de la identidad de Karla Godoy, cargadas desde el <head> para
+   iniciar su descarga antes de aplicar los estilos del ebook. */
+
+:root {
+  /* Paleta Oficial Karla Godoy */
+  --kg-burgundy-deep: #4F0911;     /* HEX: 4f0911 - RGB: 79, 9, 17 */
+  --kg-burgundy-marsala: #713132;  /* HEX: 713132 - RGB: 113, 49, 50 */
+  --kg-dusty-rose: #916066;        /* HEX: 916066 - RGB: 145, 96, 102 */
+  --kg-earth-taupe: #856654;       /* HEX: 856654 - RGB: 133, 102, 84 */
+  --kg-soft-nude: #D0BDAC;         /* HEX: d0bdac - RGB: 208, 189, 172 */
+
+  /* Tonos Editoriales Neutros */
+  --kg-bg-paper: #FAF7F4;
+  --kg-bg-card: #FFFFFF;
+  --kg-bg-tint: #F5EFEB;
+  --kg-text-title: #360E14;
+  --kg-text-body: #322225;
+  --kg-text-muted: #6B5558;
+  --kg-border-subtle: #E8DDD5;
+  --kg-border-strong: #D0BDAC;
+  --kg-gold-accent: #C5A059;
+
+  /* Tipografías */
+  --font-serif-display: 'Cormorant Garamond', Georgia, serif;
+  --font-serif-title: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Alex Brush', cursive;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+
+  /* Dimensiones A4 Oficiales */
+  --page-width: 210mm;
+  --page-height: 297mm;
+  --page-padding: 16mm 18mm 16mm 18mm;
+}
+
+/* Reset básico */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  background-color: #241A1C;
+  color: var(--kg-text-body);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #231B1C;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   BARRA DE HERRAMIENTAS DE LECTURA DIGITAL (TOOLBAR)
+   ========================================================================== */
+.reader-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: rgba(36, 26, 28, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(208, 189, 172, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 1000;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+}
+
+.toolbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toolbar-brand-title {
+  font-family: var(--font-serif-title);
+  font-size: 15px;
+  letter-spacing: 0.15em;
+  color: var(--kg-soft-nude);
+  font-weight: 500;
+}
+
+.toolbar-brand-subtitle {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+}
+
+.toolbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.toolbar-select, .toolbar-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(208, 189, 172, 0.35);
+  color: #FFFFFF;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toolbar-select {
+  padding-right: 28px;
+  background-color: #2F2124;
+}
+
+.toolbar-select:hover, .toolbar-btn:hover {
+  background: rgba(208, 189, 172, 0.2);
+  border-color: var(--kg-soft-nude);
+}
+
+.toolbar-btn-primary {
+  background: var(--kg-dusty-rose);
+  border-color: var(--kg-soft-nude);
+  color: #FFFFFF;
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(79, 9, 17, 0.4);
+}
+
+.toolbar-btn-primary:hover {
+  background: var(--kg-burgundy-marsala);
+  border-color: #FFFFFF;
+}
+
+/* ==========================================================================
+   CONTENEDOR DE PÁGINAS A4
+   ========================================================================== */
+.ebook-viewport {
+  padding-top: 80px;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  transition: transform 0.2s ease;
+}
+
+/* Hoja A4 estándar */
+.ebook-page {
+  width: var(--page-width);
+  min-height: var(--page-height);
+  max-height: var(--page-height);
+  height: var(--page-height);
+  background-color: var(--kg-bg-paper);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: var(--page-padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  page-break-after: always;
+  break-after: page;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  border-radius: 2px;
+}
+
+/* Cabecera y Pie de página A4 */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--kg-border-subtle);
+  padding-bottom: 7px;
+  margin-bottom: 14px;
+  font-size: 8.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--kg-earth-taupe);
+  font-weight: 500;
+}
+
+.page-header-logo {
+  height: 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-serif-title);
+  color: var(--kg-burgundy-deep);
+  font-size: 8pt;
+  letter-spacing: 0.12em;
+}
+
+.page-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--kg-border-subtle);
+  padding-top: 7px;
+  margin-top: 14px;
+  font-size: 8.5pt;
+  color: var(--kg-text-muted);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+/* Las portadillas centran su contenido, pero el pie debe conservar todo el
+   ancho útil de la hoja para separar el título editorial y su numeración. */
+.page-chapter-cover .page-footer {
+  align-self: stretch;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.page-footer > :first-child {
+  min-width: 0;
+}
+
+.page-number {
+  flex: 0 0 auto;
+  margin-left: 12px;
+  font-family: var(--font-serif-display);
+  font-size: 11pt;
+  font-weight: 600;
+  color: var(--kg-burgundy-deep);
+}
+
+.page-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   TIPOGRAFÍA EDITORIAL
+   ========================================================================== */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif-display);
+  color: var(--kg-text-title);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.chapter-number-pill {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--kg-dusty-rose);
+  margin-bottom: 6px;
+}
+
+.page-main-title {
+  font-size: 20pt;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--kg-burgundy-deep);
+  margin-bottom: 10px;
+}
+
+.page-subtitle {
+  font-size: 11pt;
+  color: var(--kg-earth-taupe);
+  font-style: italic;
+  margin-bottom: 16px;
+  line-height: 1.45;
+}
+
+p {
+  font-size: 9.8pt;
+  line-height: 1.55;
+  color: var(--kg-text-body);
+  margin-bottom: 10px;
+}
+
+p.lead {
+  font-size: 11pt;
+  font-weight: 500;
+  color: var(--kg-burgundy-marsala);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.quote-highlight {
+  font-family: var(--font-serif-display);
+  font-size: 15pt;
+  font-style: italic;
+  color: var(--kg-burgundy-deep);
+  line-height: 1.35;
+  text-align: center;
+  margin: 14px 0;
+  padding: 10px 24px;
+  border-left: 2px solid var(--kg-soft-nude);
+  border-right: 2px solid var(--kg-soft-nude);
+}
+
+/* ==========================================================================
+   PLANTILLA 1: PORTADA PRINCIPAL (COVER)
+   ========================================================================== */
+.ebook-page.page-cover {
+  background: radial-gradient(circle at 50% 30%, #5E0C15 0%, #3B060C 80%, #2A0409 100%);
+  color: #FFFFFF;
+  padding: 22mm 20mm;
+  justify-content: space-between;
+  text-align: center;
+  border: 1px solid rgba(208, 189, 172, 0.3);
+}
+
+.cover-frame {
+  border: 1.2px solid rgba(208, 189, 172, 0.45);
+  height: 100%;
+  padding: 18mm 14mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.cover-corner-accent {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--kg-soft-nude);
+  border-style: solid;
+}
+.cover-corner-tl { top: -1px; left: -1px; border-width: 2px 0 0 2px; }
+.cover-corner-tr { top: -1px; right: -1px; border-width: 2px 2px 0 0; }
+.cover-corner-bl { bottom: -1px; left: -1px; border-width: 0 0 2px 2px; }
+.cover-corner-br { bottom: -1px; right: -1px; border-width: 0 2px 2px 0; }
+
+.cover-top-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cover-logo-wrap {
+  width: 360px;
+  max-width: 100%;
+  margin: 0 auto 16px;
+  line-height: 0;
+}
+
+.cover-logo-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cover-badge {
+  font-family: var(--font-sans);
+  font-size: 8.5pt;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--kg-soft-nude);
+  border-bottom: 1px solid rgba(208, 189, 172, 0.4);
+  padding-bottom: 6px;
+  margin-bottom: 24px;
+}
+
+.cover-titles {
+  margin: auto 0;
+  max-width: 160mm;
+}
+
+.cover-title-top {
+  font-family: var(--font-serif-display);
+  font-size: 28pt;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  line-height: 1.15;
+  font-weight: 500;
+}
+
+.cover-title-highlight {
+  display: block;
+  font-family: var(--font-serif-display);
+  font-size: 33pt;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 700;
+  /* Requisito explícito: "NO PIERDO GRASA" en rosa/nude de marca */
+  color: var(--kg-soft-nude);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+  margin-top: 6px;
+  margin-bottom: 18px;
+}
+
+.cover-divider {
+  width: 60px;
+  height: 1px;
+  background: var(--kg-soft-nude);
+  margin: 16px auto;
+  opacity: 0.7;
+}
+
+.cover-subtitle {
+  font-family: var(--font-sans);
+  font-size: 10.5pt;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #F0E6DF;
+  max-width: 130mm;
+  margin: 0 auto 20px auto;
+  letter-spacing: 0.02em;
+}
+
+.cover-method-box {
+  background: rgba(208, 189, 172, 0.12);
+  border: 1px solid rgba(208, 189, 172, 0.35);
+  border-radius: 4px;
+  padding: 8px 18px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.cover-method-label {
+  font-family: var(--font-serif-title);
+  font-size: 9.5pt;
+  letter-spacing: 0.2em;
+  color: var(--kg-soft-nude);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.cover-method-slogan {
+  font-family: var(--font-sans);
+  font-size: 8.5pt;
+  color: #FFFFFF;
+  letter-spacing: 0.06em;
+  margin-top: 2px;
+}
+
+.cover-author {
+  margin-top: 24px;
+  font-family: var(--font-serif-title);
+  font-size: 13pt;
+  letter-spacing: 0.16em;
+  color: #FFFFFF;
+}
+
+.cover-author-role {
+  font-family: var(--font-sans);
+  font-size: 8pt;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--kg-soft-nude);
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   PLANTILLA 2: PÁGINA LEGAL Y CRÉDITOS
+   ========================================================================== */
+.page-legal .legal-content {
+  max-width: 140mm;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 9pt;
+  line-height: 1.65;
+  color: var(--kg-text-muted);
+}
+
+.legal-title {
+  font-family: var(--font-serif-title);
+  font-size: 14pt;
+  letter-spacing: 0.12em;
+  color: var(--kg-burgundy-deep);
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.legal-box {
+  background: #F4EBE4;
+  border-left: 3px solid var(--kg-dusty-rose);
+  padding: 12px 16px;
+  border-radius: 0 4px 4px 0;
+  font-size: 8.5pt;
+}
+
+.legal-box h5 {
+  font-family: var(--font-sans);
+  font-size: 8.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--kg-burgundy-deep);
+  margin-bottom: 6px;
+}
+
+/* ==========================================================================
+   PLANTILLA 3: ÍNDICE GENERAL (TABLE OF CONTENTS)
+   ========================================================================== */
+.toc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.toc-item {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 6px 8px;
+  border-bottom: 1px dotted var(--kg-border-strong);
+  text-decoration: none;
+  color: var(--kg-text-body);
+  transition: background 0.15s ease;
+  border-radius: 4px;
+}
+
+.toc-item:hover {
+  background: #F5EEE8;
+}
+
+.toc-num {
+  font-family: var(--font-serif-title);
+  font-size: 9.5pt;
+  font-weight: 700;
+  color: var(--kg-burgundy-deep);
+  width: 85px;
+  letter-spacing: 0.1em;
+}
+
+.toc-title {
+  flex: 1;
+  font-family: var(--font-sans);
+  font-size: 9.5pt;
+  font-weight: 600;
+  color: var(--kg-text-title);
+  letter-spacing: 0.02em;
+}
+
+.toc-page {
+  font-family: var(--font-serif-display);
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--kg-dusty-rose);
+  margin-left: 12px;
+}
+
+/* ==========================================================================
+   PLANTILLA 4: PORTADILLA DE CAPÍTULO (CHAPTER DIVIDER)
+   ========================================================================== */
+.ebook-page.page-chapter-cover {
+  background: linear-gradient(135deg, #FAF4EF 0%, #F0E5DC 100%);
+  border-left: 6mm solid var(--kg-burgundy-deep);
+  justify-content: center;
+  padding: 24mm 22mm;
+}
+
+.chapter-cover-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.chapter-badge-large {
+  font-family: var(--font-serif-title);
+  font-size: 11pt;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--kg-burgundy-marsala);
+  font-weight: 600;
+  border-bottom: 2px solid var(--kg-soft-nude);
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+}
+
+.chapter-title-large {
+  font-family: var(--font-serif-display);
+  font-size: 26pt;
+  line-height: 1.18;
+  letter-spacing: 0.03em;
+  color: var(--kg-burgundy-deep);
+  text-transform: uppercase;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+
+.chapter-subtitle-large {
+  font-family: var(--font-serif-display);
+  font-size: 13pt;
+  font-style: italic;
+  color: var(--kg-earth-taupe);
+  line-height: 1.5;
+  max-width: 140mm;
+  margin-bottom: 28px;
+}
+
+.chapter-accent-script {
+  font-family: var(--font-script);
+  font-size: 32pt;
+  color: var(--kg-dusty-rose);
+  margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   COMPONENTES DESTACADOS REUTILIZABLES
+   ========================================================================== */
+
+/* 1. ERROR BALANCE */
+.box-error-balance {
+  background: #FFF5F5;
+  border: 1.5px solid #E8B4B8;
+  border-left: 5px solid var(--kg-burgundy-marsala);
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+
+.box-error-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 9.5pt;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--kg-burgundy-deep);
+  margin-bottom: 8px;
+}
+
+.box-error-icon {
+  font-size: 13pt;
+}
+
+/* 2. HERRAMIENTA BALANCE */
+.box-herramienta-balance {
+  background: #FAF6F2;
+  border: 1.2px solid var(--kg-soft-nude);
+  border-left: 5px solid var(--kg-earth-taupe);
+  border-radius: 4px;
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+
+.box-herramienta-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 9.5pt;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--kg-earth-taupe);
+  margin-bottom: 8px;
+}
+
+/* 3. MANTRA BALANCE */
+.box-mantra-balance {
+  background: linear-gradient(135deg, #F8EFE9 0%, #EFE1D5 100%);
+  border: 1px solid var(--kg-soft-nude);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 14px 0;
+  text-align: center;
+  box-shadow: inset 0 0 0 2px #FFFFFF;
+}
+
+.box-mantra-tag {
+  font-family: var(--font-sans);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--kg-burgundy-deep);
+  margin-bottom: 6px;
+}
+
+.box-mantra-text {
+  font-family: var(--font-serif-display);
+  font-size: 13pt;
+  font-style: italic;
+  color: var(--kg-burgundy-deep);
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* 4. RECUERDA */
+.box-recuerda {
+  background: #F3EBE4;
+  border-radius: 4px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  border-left: 3px solid var(--kg-dusty-rose);
+}
+
+.box-recuerda-label {
+  font-family: var(--font-sans);
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--kg-dusty-rose);
+  margin-bottom: 4px;
+}
+
+/* 5. TU NUEVA REGLA */
+.box-tu-nueva-regla {
+  background: #FFFFFF;
+  border: 1.5px solid var(--kg-burgundy-deep);
+  border-radius: 4px;
+  padding: 14px 18px;
+  margin: 14px 0;
+  position: relative;
+}
+
+.box-regla-tag {
+  display: inline-block;
+  background: var(--kg-burgundy-deep);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 8px;
+}
+
+/* 6. EJERCICIO BALANCE & CUADERNO DE TRABAJO */
+.box-ejercicio-balance {
+  background: #FFFFFF;
+  border: 1px solid var(--kg-border-strong);
+  border-radius: 5px;
+  padding: 16px 18px;
+  margin: 10px 0;
+  box-shadow: 0 2px 6px rgba(133, 102, 84, 0.06);
+}
+
+.box-ejercicio-title {
+  font-family: var(--font-serif-title);
+  font-size: 11pt;
+  letter-spacing: 0.12em;
+  color: var(--kg-burgundy-deep);
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--kg-border-subtle);
+  padding-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ejercicio-prompt {
+  font-size: 9.2pt;
+  font-weight: 600;
+  color: var(--kg-text-title);
+  margin-top: 8px;
+  margin-bottom: 3px;
+}
+
+/* Líneas para escribir en el cuaderno de trabajo */
+.write-field {
+  margin-bottom: 8px;
+}
+
+.write-label {
+  font-size: 9pt;
+  font-weight: 600;
+  color: var(--kg-text-title);
+  margin-bottom: 2px;
+}
+
+.write-line {
+  width: 100%;
+  border: none;
+  border-bottom: 1.2px solid var(--kg-earth-taupe);
+  background: transparent;
+  padding: 3px 4px;
+  font-family: var(--font-sans);
+  font-size: 9.5pt;
+  color: var(--kg-burgundy-deep);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.write-line:focus {
+  border-bottom-color: var(--kg-burgundy-deep);
+  background: rgba(208, 189, 172, 0.1);
+}
+
+/* Checklists */
+.checklist-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 8px 0;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 9.2pt;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.check-box-custom {
+  width: 15px;
+  height: 15px;
+  border: 1.5px solid var(--kg-earth-taupe);
+  border-radius: 3px;
+  background: #FFFFFF;
+  margin-top: 2px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.check-input {
+  display: none;
+}
+
+.check-input:checked + .check-box-custom {
+  background: var(--kg-burgundy-deep);
+  border-color: var(--kg-burgundy-deep);
+}
+
+.check-input:checked + .check-box-custom::after {
+  content: '✓';
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+/* Listas con viñetas estilizadas */
+.editorial-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.editorial-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 9.4pt;
+  line-height: 1.45;
+  color: var(--kg-text-body);
+}
+
+.editorial-list li::before {
+  content: '•';
+  position: absolute;
+  left: 4px;
+  color: var(--kg-dusty-rose);
+  font-size: 14pt;
+  line-height: 0.9;
+}
+
+/* Estructura del Plato Balance */
+.plate-structure-card {
+  background: #FFFFFF;
+  border: 1.5px solid var(--kg-soft-nude);
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.plate-formula {
+  font-family: var(--font-serif-title);
+  font-size: 10pt;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--kg-burgundy-deep);
+  line-height: 1.5;
+}
+
+/* Comparativa de Platos Ejemplo */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.comparison-card {
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 8.8pt;
+  line-height: 1.4;
+}
+
+.comparison-card.card-negative {
+  background: #FFF5F5;
+  border: 1px solid #F2C2C6;
+}
+
+.comparison-card.card-positive {
+  background: #F5FAF6;
+  border: 1px solid #BCE2C9;
+}
+
+.comparison-card-title {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 8.8pt;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ==========================================================================
+   PLANTILLA: PLAN DE 7 DÍAS
+   ========================================================================== */
+.plan-days-container {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 8px;
+}
+
+.plan-day-card {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  gap: 12px;
+  background: #FFFFFF;
+  border: 1px solid var(--kg-border-subtle);
+  border-left: 4px solid var(--kg-earth-taupe);
+  border-radius: 4px;
+  padding: 8px 12px;
+  align-items: center;
+}
+
+.plan-day-card:nth-child(even) {
+  border-left-color: var(--kg-dusty-rose);
+}
+
+.plan-day-label {
+  font-family: var(--font-serif-title);
+  font-size: 9pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--kg-burgundy-deep);
+}
+
+.plan-day-name {
+  font-family: var(--font-sans);
+  font-size: 7.8pt;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--kg-dusty-rose);
+  display: block;
+}
+
+.plan-day-desc {
+  font-size: 8.6pt;
+  line-height: 1.35;
+  color: var(--kg-text-body);
+}
+
+/* ==========================================================================
+   PLANTILLA: LLAMADA A LA ACCIÓN (CTA) & CONTACTO
+   ========================================================================== */
+.cta-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--kg-border-subtle);
+}
+
+.cta-avatar-box {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  border: 2px solid var(--kg-soft-nude);
+  overflow: hidden;
+  background: #EDE2D8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cta-avatar-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cta-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 12px 0;
+}
+
+.cta-contact-item {
+  background: #FFFFFF;
+  border: 1px solid var(--kg-border-strong);
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+
+.cta-pending {
+  color: var(--kg-earth-taupe);
+  font-size: 8pt;
+}
+
+.qr-pending {
+  display: inline-flex;
+  min-width: 58px;
+  min-height: 58px;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--kg-earth-taupe);
+  border-radius: 4px;
+  color: var(--kg-earth-taupe);
+  font-family: var(--font-sans);
+  font-size: 7pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.45;
+  text-align: center;
+}
+
+.cta-contact-label {
+  font-size: 7.5pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--kg-dusty-rose);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.cta-contact-val {
+  font-size: 8.8pt;
+  font-weight: 600;
+  color: var(--kg-burgundy-deep);
+}
+
+.cta-booking-box {
+  background: linear-gradient(135deg, #FAF2EB 0%, #EFE1D5 100%);
+  border: 1px solid var(--kg-soft-nude);
+  border-radius: 6px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 12px 0;
+}
+
+.cta-booking-text {
+  flex: 1;
+}
+
+.cta-qr-box {
+  width: 80px;
+  height: 80px;
+  background: #FFFFFF;
+  padding: 4px;
+  border-radius: 4px;
+  border: 1px solid var(--kg-soft-nude);
+  flex-shrink: 0;
+}
+
+.cta-qr-box img, .cta-qr-box svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ==========================================================================
+   PLANTILLA: BONUS 1 (PENDIENTE)
+   ========================================================================== */
+.bonus-pending-card {
+  background: #F9F3EE;
+  border: 2px dashed var(--kg-dusty-rose);
+  border-radius: 6px;
+  padding: 16px 20px;
+  text-align: center;
+  margin: 16px 0;
+}
+
+.bonus-badge {
+  display: inline-block;
+  background: var(--kg-dusty-rose);
+  color: #FFFFFF;
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.notes-ruled-sheet {
+  background-image: repeating-linear-gradient(transparent, transparent 24px, #EADFD7 24px, #EADFD7 25px);
+  min-height: 120mm;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--kg-border-subtle);
+  background-color: #FFFFFF;
+  padding: 8px 12px;
+}
+
+/* ==========================================================================
+   PLANTILLA: CONTRAPORTADA (BACK COVER)
+   ========================================================================== */
+.ebook-page.page-back-cover {
+  background: radial-gradient(circle at 50% 50%, #5E0C15 0%, #3B060C 80%, #2A0409 100%);
+  color: #FFFFFF;
+  padding: 22mm 20mm;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(208, 189, 172, 0.3);
+}
+
+.back-cover-inner {
+  max-width: 140mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.back-cover-logo {
+  width: 210px;
+}
+
+.back-cover-quote {
+  font-family: var(--font-serif-display);
+  font-size: 16pt;
+  font-style: italic;
+  color: var(--kg-soft-nude);
+  line-height: 1.45;
+  margin: 12px 0;
+}
+
+.back-cover-meta {
+  font-size: 8.5pt;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   REGLAS DE IMPRESIÓN Y EXPORTACIÓN A PDF (@MEDIA PRINT)
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html, body {
+    background: transparent !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 210mm !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .reader-toolbar {
+    display: none !important;
+  }
+
+  .ebook-viewport {
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 0 !important;
+    transform: none !important;
+  }
+
+  .ebook-page {
+    width: 210mm !important;
+    height: 297mm !important;
+    min-height: 297mm !important;
+    max-height: 297mm !important;
+    margin: 0 !important;
+    padding: 16mm 18mm 16mm 18mm !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    overflow: hidden !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Fondos oscuros de portada y contraportada respetados */
+  .ebook-page.page-cover,
+  .ebook-page.page-back-cover {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .write-line {
+    border-bottom: 1.2px solid #856654 !important;
+  }
+}
+
+/* Visor de propuestas: controles adaptables sin cambiar las páginas editoriales. */
+@media screen {
+  .reader-toolbar { position: sticky; height: auto; min-height: 60px; flex-wrap: wrap; gap: 12px; padding: 12px; }
+  .toolbar-controls { flex-wrap: wrap; gap: 8px; min-width: 0; }
+  .toolbar-select { max-width: 100%; min-width: 0; }
+  #page-select { max-width: 240px; }
+  .ebook-viewport { padding-top: 24px; }
+  .ebook-page { flex-shrink: 0; scroll-margin-top: 180px; }
+}
+@media print {
+  .ebook-page { zoom: 1 !important; }
+}
+/* La tarjeta muestra la portada completa; el enlace abre las 33 páginas. */
+@media screen {
+  .cover-preview .reader-toolbar,
+  .cover-preview .ebook-page:not(.page-cover) { display: none; }
+  .cover-preview .ebook-viewport { padding: 16px 0; gap: 0; }
+}
+/* Portadas a sangre para la presentación editorial de la landing. */
+@media screen {
+  html:has(body.cover-preview), body.cover-preview { background:transparent; overflow:hidden; min-height:0; }
+  .cover-preview .ebook-viewport { padding:0; }
+  .cover-preview .ebook-page { box-shadow:none; border:0; border-radius:0; }
+}

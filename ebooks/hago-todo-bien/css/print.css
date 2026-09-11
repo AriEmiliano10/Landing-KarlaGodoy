@@ -1,0 +1,212 @@
+/* ==========================================================================
+   ESTILOS DE IMPRESIÓN Y EXPORTACIÓN A PDF (A4 VERTICAL)
+   Proyecto Ebook Karla Godoy - Método Balance
+   ========================================================================== */
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@page :left {
+  margin: 0;
+}
+
+@page :right {
+  margin: 0;
+}
+
+/* Ocultar elementos de interfaz web */
+.reader-toolbar,
+.no-print {
+  display: none !important;
+}
+
+/* Ajustes globales del documento impreso */
+html, body {
+  background: #FFFFFF !important;
+  color: #1A1A1A !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 210mm !important;
+  height: auto !important;
+  overflow: visible !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.ebook-viewport {
+  padding: 0 !important;
+  margin: 0 !important;
+  gap: 0 !important;
+  transform: none !important;
+  display: block !important;
+}
+
+/* Hoja A4 estricta para Chrome "Guardar como PDF" */
+.ebook-page {
+  width: 210mm !important;
+  height: 297mm !important;
+  min-height: 297mm !important;
+  max-height: 297mm !important;
+  margin: 0 !important;
+  padding: 16mm 18mm 16mm 18mm !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  page-break-after: always !important;
+  break-after: page !important;
+  page-break-inside: avoid !important;
+  break-inside: avoid !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Evita que Flexbox comprima cabeceras, pies o el bloque central al paginar. */
+.page-header,
+.page-footer {
+  flex: 0 0 auto !important;
+}
+
+.page-body,
+.chapter-cover-inner {
+  min-height: 0 !important;
+}
+
+/* Forzar que la última página no cree una hoja en blanco innecesaria */
+.ebook-page:last-child {
+  page-break-after: auto !important;
+  break-after: auto !important;
+}
+
+/* Garantizar preservación de fondos en portada y contraportada */
+.ebook-page.page-cover {
+  background: radial-gradient(circle at 50% 30%, #5E0C15 0%, #3B060C 80%, #2A0409 100%) !important;
+  color: #FFFFFF !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.ebook-page.page-back-cover {
+  background: radial-gradient(circle at 50% 50%, #5E0C15 0%, #3B060C 80%, #2A0409 100%) !important;
+  color: #FFFFFF !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+.ebook-page.page-chapter-cover {
+  background: linear-gradient(135deg, #FAF4EF 0%, #F0E5DC 100%) !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Líneas de escritura para respuesta a mano */
+.write-line {
+  border-bottom: 1.2px solid #856654 !important;
+  background: transparent !important;
+}
+
+/* Los ejemplos son guía de la versión web; en el PDF quedan líneas limpias. */
+.write-line::placeholder {
+  color: transparent !important;
+  opacity: 0 !important;
+}
+
+.check-box-custom {
+  border-color: #856654 !important;
+}
+
+.notes-ruled-sheet {
+  background-image: repeating-linear-gradient(transparent, transparent 24px, #EADFD7 24px, #EADFD7 25px) !important;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+/* Variación Nude Rose: estas reglas van al final para conservar su identidad
+   visual frente a los ajustes A4 generales de este archivo. */
+@media print {
+  body.theme-nude-rose,
+  body.theme-nude-rose * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body.theme-nude-rose .ebook-page.page-cover,
+  body.theme-nude-rose .ebook-page.page-back-cover {
+    padding: 18mm !important;
+    border: 1px solid #D6C2B4 !important;
+  }
+
+  body.theme-nude-rose .ebook-page.page-chapter-cover {
+    padding: 18mm !important;
+    border-top: 1px solid #E0D4C9 !important;
+    border-right: 1px solid #E0D4C9 !important;
+    border-bottom: 1px solid #E0D4C9 !important;
+    border-left: 6mm solid #713132 !important;
+  }
+
+  body.theme-nude-rose .cover-frame,
+  body.theme-nude-rose .back-cover-inner {
+    background: rgba(255, 255, 255, 0.55) !important;
+    border: 1.5px solid #856654 !important;
+    outline: 1px solid #D0BDAC !important;
+    outline-offset: -7px !important;
+  }
+
+  body.theme-nude-rose .chapter-cover-inner {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 1.5px solid #D4C3B7 !important;
+    outline: 1px solid #E8DDD5 !important;
+    outline-offset: -7px !important;
+  }
+
+  body.theme-nude-rose .cover-title-highlight {
+    background: linear-gradient(135deg, #916066 0%, #713132 100%) !important;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+  }
+
+  body.theme-nude-rose .cover-method-box,
+  body.theme-nude-rose .chapter-cover-inner .box-recuerda {
+    background: #FFFFFF !important;
+  }
+}
+
+/* Variación Marsala: el archivo se carga únicamente al imprimir. Estos
+   ajustes restauran las proporciones y detalles propios de esta propuesta
+   después de las reglas A4 generales. */
+body:not(.theme-nude-rose),
+body:not(.theme-nude-rose) * {
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
+
+body:not(.theme-nude-rose) .ebook-page.page-cover,
+body:not(.theme-nude-rose) .ebook-page.page-back-cover {
+  padding: 22mm 20mm !important;
+  border: 1px solid rgba(208, 189, 172, 0.3) !important;
+}
+
+body:not(.theme-nude-rose) .cover-frame {
+  height: 100% !important;
+  padding: 18mm 14mm !important;
+  border: 1.2px solid rgba(208, 189, 172, 0.45) !important;
+}
+
+body:not(.theme-nude-rose) .ebook-page.page-chapter-cover {
+  padding: 24mm 22mm !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
+  border-left: 6mm solid #3B060C !important;
+}
+
+body:not(.theme-nude-rose) .cover-corner-accent {
+  border-color: #D0BDAC !important;
+}

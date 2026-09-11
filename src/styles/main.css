@@ -85,3 +85,58 @@ body {
     transform: scale(0.9);
   }
 }
+
+/* Un solo bloque editorial relaciona el título con sus dos propuestas. */
+.kg-ebook-feature { display:grid; grid-template-columns: .9fr 1.1fr; align-items:center; gap:48px; padding:48px 0 64px; }
+.kg-ebook-intro { min-width:0; }
+.kg-ebook-eyebrow { font-family:Georgia,serif; font-style:italic; color:#916066; font-size:21px; }
+.kg-ebook-kicker { font-size:10px; text-transform:uppercase; letter-spacing:.2em; color:#856654; margin:30px 0 16px; }
+.kg-ebook-intro h2 { font-family:Georgia,serif; font-size:clamp(32px,3.3vw,48px); line-height:1.15; color:#4f0911; letter-spacing:-.04em; font-weight:500; }
+.kg-ebook-intro h2 em { color:#916066; font-weight:400; }
+.kg-ebook-description { color:#735c60; font-size:14px; line-height:1.9; max-width:400px; margin:24px 0; }
+.kg-ebook-meta { display:flex; flex-wrap:wrap; gap:12px 20px; font-size:11px; color:#856654; }
+.kg-ebook-meta span { display:flex; align-items:center; gap:8px; }
+.kg-ebook-meta svg { width:16px; height:16px; }
+.kg-ebook-editorial-note { border-top:1px solid #d0bdac80; margin-top:30px; padding-top:24px; max-width:410px; }
+.kg-ebook-editorial-note>span { font-family:Georgia,serif; font-size:20px; color:#4f0911; }
+.kg-ebook-editorial-note p { font-size:12px; line-height:1.8; color:#856654; margin:10px 0; }
+.kg-ebook-editorial-note small { display:block; font-size:9px; text-transform:uppercase; letter-spacing:.12em; color:#916066; }
+.kg-ebook-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:30px; padding:48px 28px 28px; border-radius:48% 48% 24px 24px; background:radial-gradient(ellipse at 50% 40%,#e7d9cd 0%,#f1e9e1 48%,#faf9f6 75%); }
+.kg-ebook-edition { min-width:0; color:#4f0911; text-decoration:none; }
+.kg-ebook-edition--2 { margin-top:50px; }
+.kg-ebook-book { position:relative; aspect-ratio:210 / 297; background:#4f0911; border-radius:2px 5px 5px 2px; box-shadow:10px 18px 24px #4f091126,3px 2px 0 #e1d7cd,5px 3px 0 #bdaa98; transform:rotate(-5deg); transition:transform .25s ease,box-shadow .25s ease; }
+.kg-ebook-edition--2 .kg-ebook-book { transform:rotate(5deg); background:#f3ece4; }
+.kg-ebook-book::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,#0002,transparent 3%,#fff2 4%,transparent 6%); pointer-events:none; }
+.kg-ebook-book iframe { width:100%; height:100%; display:block; border:0; pointer-events:none; border-radius:inherit; }
+.kg-ebook-edition:hover .kg-ebook-book { transform:translateY(-8px) rotate(0); box-shadow:8px 24px 32px #4f091130; }
+.kg-ebook-edition:focus-visible { outline:2px solid #916066; outline-offset:12px; border-radius:4px; }
+.kg-ebook-edition-caption { display:flex; align-items:baseline; gap:12px; margin-top:30px; padding-top:16px; border-top:1px solid #d0bdac; }
+.kg-ebook-edition-number { font-size:10px; color:#916066; }
+.kg-ebook-edition-caption h3 { font-family:Georgia,serif; font-size:22px; }
+.kg-ebook-explore { display:inline-block; font-size:11px; margin-top:8px; padding-bottom:4px; border-bottom:1px solid #91606680; }
+.kg-ebook-catalog { border-top:1px solid #d0bdac80; border-bottom:1px solid #d0bdac80; }
+.kg-ebook-catalog summary { cursor:pointer; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:24px 0; list-style:none; color:#4f0911; font-family:Georgia,serif; font-size:21px; }
+.kg-ebook-catalog summary::-webkit-details-marker { display:none; }
+.kg-ebook-catalog summary small { font-family:Arial,sans-serif; color:#856654; font-size:10px; margin-left:16px; }
+.kg-ebook-catalog summary:focus-visible { outline:2px solid #916066; outline-offset:4px; }
+.kg-ebook-catalog-icon { font-family:Arial,sans-serif; font-size:24px; transition:transform .2s; }
+.kg-ebook-catalog[open] .kg-ebook-catalog-icon { transform:rotate(45deg); }
+.kg-ebook-catalog-content { padding:8px 0 32px; }
+@media(max-width:1023px) {
+  .kg-ebook-feature { gap:24px; }
+  .kg-ebook-gallery { gap:20px; padding:32px 14px 24px; }
+  .kg-ebook-edition-caption { gap:8px; }
+  .kg-ebook-edition-caption h3 { font-size:19px; }
+}
+@media(max-width:767px) {
+  .kg-ebook-feature { grid-template-columns:1fr; padding:0 0 32px; gap:24px; }
+  .kg-ebook-intro h2 { font-size:clamp(32px,7vw,44px); }
+  .kg-ebook-description { margin:20px 0; }
+  .kg-ebook-gallery { max-width:520px; width:100%; margin:auto; padding:24px 12px; gap:24px; }
+  .kg-ebook-edition--2 { margin-top:30px; }
+  .kg-ebook-edition-caption { margin-top:24px; }
+  .kg-ebook-catalog summary small { display:block; margin:8px 0 0; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .kg-ebook-book,.kg-ebook-catalog-icon { transition:none; }
+}

@@ -1,0 +1,575 @@
+/* ==========================================================================
+   VARIACIÓN 2: EDICIÓN SAND LINEN & DUSTY ROSE (CLEAN WELLNESS)
+   Proyecto Ebook Karla Godoy - Método Balance
+   Diseño Editorial Contemporáneo, Luminoso, Equilibrado y Sereno
+   ========================================================================== */
+
+body.theme-nude-rose {
+  --kg-bg-paper: #FCFBF9;
+  --kg-bg-tint: #F6EFEA;
+  --kg-bg-card: #FFFFFF;
+  --kg-border-subtle: #E8DDD5;
+  --kg-border-strong: #CDB8A8;
+  --kg-text-title: #4F0911;
+  --kg-text-body: #352528;
+  --kg-text-muted: #735C60;
+  background-color: #261F20;
+}
+
+/* ==========================================================================
+   PÁGINAS GENERALES
+   ========================================================================== */
+body.theme-nude-rose .ebook-page {
+  background-color: #FCFBF9;
+  border-color: #ECE3DB;
+}
+
+body.theme-nude-rose .chapter-number-pill {
+  background: #F4EAE6;
+  color: #7A2833;
+  border: 1px solid #E5D2CB;
+  border-radius: 20px;
+  padding: 3px 14px;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+
+body.theme-nude-rose .page-header {
+  border-bottom-color: #E8DDD5;
+  color: #856654;
+}
+
+body.theme-nude-rose .page-header-logo {
+  color: #4F0911;
+}
+
+body.theme-nude-rose .page-footer {
+  border-top-color: #E8DDD5;
+  color: #856654;
+}
+
+body.theme-nude-rose .page-number {
+  color: #713132;
+  font-weight: 700;
+  font-family: var(--font-serif-display);
+}
+
+/* ==========================================================================
+   PORTADA PRINCIPAL (PÁGINA 1) - EDICIÓN SAND LINEN & DUSTY ROSE
+   ========================================================================== */
+body.theme-nude-rose .ebook-page.page-cover {
+  background: radial-gradient(circle at 50% 32%, #FAF6F1 0%, #F3ECE4 55%, #E9DED5 100%) !important;
+  color: #38070D !important;
+  border: 1px solid #D6C2B4;
+  padding: 18mm 18mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+body.theme-nude-rose .cover-frame {
+  width: 100%;
+  height: 100%;
+  border: 1.5px solid #856654;
+  outline: 1px solid #D0BDAC;
+  outline-offset: -7px;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: inset 0 0 35px rgba(208, 189, 172, 0.22), 0 4px 20px rgba(133, 102, 84, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 16mm 14mm;
+  position: relative;
+}
+
+body.theme-nude-rose .cover-corner-accent {
+  border-color: #856654 !important;
+}
+
+body.theme-nude-rose .cover-top-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Mantiene el logo de portada protagonista y centrado en esta variación. */
+body.theme-nude-rose .cover-logo-wrap {
+  width: 360px;
+  max-width: 100%;
+  margin: 0 auto 16px;
+  line-height: 0;
+}
+
+body.theme-nude-rose .cover-logo-wrap img {
+  max-width: 100% !important;
+  height: auto;
+}
+
+body.theme-nude-rose .cover-badge {
+  display: inline-block;
+  color: #713132;
+  border-bottom: 1.5px solid rgba(133, 102, 84, 0.5);
+  font-weight: 700;
+  margin: 0 auto 16px auto;
+  text-align: center;
+  letter-spacing: 0.26em;
+}
+
+body.theme-nude-rose .cover-titles {
+  width: 100%;
+  max-width: 160mm;
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+body.theme-nude-rose .cover-title-top {
+  color: #4F0911;
+  font-family: var(--font-serif-display);
+  font-size: 30pt;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-align: center;
+  width: 100%;
+  text-shadow: none;
+}
+
+body.theme-nude-rose .cover-title-highlight {
+  display: inline-block;
+  color: #FFFFFF;
+  background: linear-gradient(135deg, #916066 0%, #713132 100%);
+  padding: 8px 24px;
+  border-radius: 6px;
+  letter-spacing: 0.08em;
+  font-family: var(--font-serif-display);
+  font-size: 28pt;
+  font-weight: 700;
+  margin: 10px auto 16px auto;
+  box-shadow: 0 4px 18px rgba(113, 49, 50, 0.24);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  text-shadow: none;
+  text-align: center;
+}
+
+body.theme-nude-rose .cover-divider {
+  background: #856654;
+  opacity: 0.75;
+  width: 64px;
+  height: 1.5px;
+  margin: 14px auto 18px auto;
+}
+
+body.theme-nude-rose .cover-subtitle {
+  color: #4E363A;
+  font-weight: 400;
+  text-align: center;
+  margin: 0 auto 20px auto;
+  max-width: 135mm;
+  line-height: 1.6;
+}
+
+body.theme-nude-rose .cover-method-box {
+  background: #FFFFFF;
+  border: 1.5px solid #D0BDAC;
+  box-shadow: 0 3px 12px rgba(133, 102, 84, 0.1);
+  margin: 6px auto 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px 24px;
+  border-radius: 6px;
+}
+
+body.theme-nude-rose .cover-method-label {
+  color: #713132;
+  font-family: var(--font-serif-display);
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-align: center;
+}
+
+body.theme-nude-rose .cover-method-slogan {
+  color: #4F0911;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  margin-top: 3px;
+  text-align: center;
+}
+
+body.theme-nude-rose .cover-bottom-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 18px;
+}
+
+body.theme-nude-rose .cover-author {
+  color: #4F0911;
+  font-family: var(--font-serif-display);
+  font-size: 14pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+
+body.theme-nude-rose .cover-author-role {
+  color: #856654;
+  font-family: var(--font-sans);
+  font-size: 8.5pt;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* Intercambio de logotipos claro/oscuro para portada y contraportada */
+body.theme-nude-rose .logo-light-theme-dark {
+  display: none !important;
+}
+
+body.theme-nude-rose .logo-dark-theme-light {
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+/* ==========================================================================
+   PORTADILLAS DE CAPÍTULO (PÁGS 4, 9, 13, 17, 20, 23, 26)
+   ========================================================================== */
+body.theme-nude-rose .ebook-page.page-chapter-cover {
+  background: linear-gradient(140deg, #FBF7F3 0%, #F4ECE3 45%, #EBE0D5 100%) !important;
+  color: #38070D !important;
+  border-left: 6mm solid #713132;
+  border-top: 1px solid #E0D4C9;
+  border-right: 1px solid #E0D4C9;
+  border-bottom: 1px solid #E0D4C9;
+  padding: 18mm 18mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+body.theme-nude-rose .chapter-cover-inner {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 22mm 16mm;
+  border-radius: 8px;
+  position: relative;
+  margin: auto 0;
+  border: 1.5px solid #D4C3B7;
+  outline: 1px solid #E8DDD5;
+  outline-offset: -7px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 6px 25px rgba(133, 102, 84, 0.08);
+}
+
+body.theme-nude-rose .chapter-badge-large {
+  background: linear-gradient(135deg, #713132, #4F0911);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 8.5pt;
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  display: inline-block;
+  margin: 0 auto 14px auto;
+  padding: 4px 18px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(79, 9, 17, 0.2);
+  text-align: center;
+}
+
+body.theme-nude-rose .chapter-accent-script {
+  color: #916066;
+  font-family: var(--font-script);
+  font-size: 40pt;
+  margin: 0 auto 6px auto;
+  text-align: center;
+  line-height: 1.2;
+}
+
+body.theme-nude-rose .chapter-title-large {
+  color: #4F0911;
+  font-family: var(--font-serif-display);
+  font-size: 24pt;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  line-height: 1.22;
+  margin: 0 auto 12px auto;
+  max-width: 140mm;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+body.theme-nude-rose .chapter-subtitle-large {
+  color: #694C51;
+  font-family: var(--font-serif-title);
+  font-size: 12.5pt;
+  font-style: italic;
+  text-align: center;
+  margin: 0 auto 20px auto;
+  max-width: 130mm;
+  line-height: 1.5;
+}
+
+body.theme-nude-rose .chapter-cover-inner .box-recuerda {
+  background: #FFFFFF;
+  border: 1.5px solid #E8DDD5;
+  border-left: 5px solid #916066;
+  border-radius: 6px;
+  padding: 12px 18px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 130mm;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(145, 96, 102, 0.06);
+}
+
+body.theme-nude-rose .chapter-cover-inner .box-recuerda .box-recuerda-label {
+  color: #856654;
+  font-family: var(--font-sans);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  margin: 0 auto 4px auto;
+  text-align: center;
+}
+
+/* ==========================================================================
+   CONTRAPORTADA (PÁGINA 33)
+   ========================================================================== */
+body.theme-nude-rose .ebook-page.page-back-cover {
+  background: radial-gradient(circle at 50% 38%, #FAF5F0 0%, #F2E9E1 60%, #E7DCD2 100%) !important;
+  color: #38070D !important;
+  border: 1px solid #D6C2B4;
+  padding: 18mm 18mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+body.theme-nude-rose .back-cover-inner {
+  width: 100%;
+  height: 100%;
+  padding: 16mm 14mm;
+  border: 1.5px solid #856654;
+  outline: 1px solid #D0BDAC;
+  outline-offset: -7px;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: inset 0 0 35px rgba(208, 189, 172, 0.22), 0 4px 20px rgba(133, 102, 84, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+body.theme-nude-rose .back-cover-logo {
+  width: 100%;
+  max-width: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+body.theme-nude-rose .back-cover-quote {
+  color: #713132;
+  font-family: var(--font-serif-display);
+  font-size: 16pt;
+  font-style: italic;
+  line-height: 1.55;
+  margin: 16px auto;
+  max-width: 130mm;
+  text-align: center;
+}
+
+body.theme-nude-rose .back-cover-meta {
+  color: #7A5F63;
+  font-family: var(--font-sans);
+  font-size: 8pt;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 14px;
+}
+
+/* ==========================================================================
+   COMPONENTES Y CUADERNO DE TRABAJO EN VARIACIÓN 2
+   ========================================================================== */
+body.theme-nude-rose .box-error-balance {
+  background: #FFFBFB;
+  border: 1.5px solid #E6D0D4;
+  border-left: 5px solid #8E4C56;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(142, 76, 86, 0.05);
+}
+
+body.theme-nude-rose .box-error-header {
+  color: #72202C;
+}
+
+body.theme-nude-rose .box-tu-nueva-regla {
+  background: linear-gradient(135deg, #FAF5F0 0%, #F3EBE2 100%);
+  border: 1.5px solid #D0BDAC;
+  border-left: 5px solid #856654;
+  border-radius: 6px;
+}
+
+body.theme-nude-rose .box-regla-tag {
+  background: #856654;
+  color: #FFFFFF;
+}
+
+body.theme-nude-rose .box-herramienta-balance {
+  background: #FFFFFF;
+  border: 1.5px solid #D8C7BC;
+  border-left: 5px solid #713132;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(133, 102, 84, 0.06);
+}
+
+body.theme-nude-rose .box-herramienta-header {
+  color: #713132;
+}
+
+body.theme-nude-rose .box-ejercicio-balance {
+  background: #FAF8F6;
+  border: 1.2px solid #E2D5CC;
+  border-radius: 8px;
+}
+
+body.theme-nude-rose .box-ejercicio-title {
+  border-bottom: 1.5px dashed #D0BDAC;
+}
+
+body.theme-nude-rose .box-recuerda {
+  background: #FFFFFF;
+  border: 1.5px solid #E8DDD5;
+  border-left: 5px solid #916066;
+  border-radius: 6px;
+}
+
+body.theme-nude-rose .box-recuerda-label {
+  color: #856654;
+}
+
+body.theme-nude-rose .box-mantra-balance {
+  background: linear-gradient(135deg, #FAF3EE 0%, #F5E8DE 100%);
+  border: 1.5px solid #D0BDAC;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(113, 49, 50, 0.05);
+  padding: 14px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+body.theme-nude-rose .box-mantra-tag {
+  background: #916066;
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 7.5pt;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  border-radius: 20px;
+  padding: 3px 14px;
+  margin: 0 auto 6px auto;
+  display: inline-block;
+  text-align: center;
+}
+
+body.theme-nude-rose .box-mantra-text {
+  color: #4F0911;
+  font-family: var(--font-serif-display);
+  font-size: 13.5pt;
+  font-style: italic;
+  text-align: center;
+  line-height: 1.45;
+}
+
+body.theme-nude-rose .quote-highlight {
+  color: #4F0911;
+  border-left: 2.5px solid #916066;
+  border-right: 2.5px solid #916066;
+  background: rgba(246, 239, 234, 0.45);
+  text-align: center;
+  margin: 14px auto;
+  max-width: 150mm;
+  border-radius: 4px;
+}
+
+body.theme-nude-rose .write-line {
+  border-bottom: 1.5px solid #856654;
+  color: #4F0911;
+}
+
+body.theme-nude-rose .check-box-custom {
+  border-color: #856654;
+}
+
+body.theme-nude-rose .check-input:checked + .check-box-custom {
+  background-color: #916066;
+  border-color: #916066;
+}
+
+/* ==========================================================================
+   REGLAS DE IMPRESIÓN PARA VARIACIÓN 2
+   ========================================================================== */
+@media print {
+  body.theme-nude-rose .ebook-page.page-cover {
+    background: radial-gradient(circle at 50% 32%, #FAF6F1 0%, #F3ECE4 55%, #E9DED5 100%) !important;
+    color: #38070D !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body.theme-nude-rose .ebook-page.page-chapter-cover {
+    background: linear-gradient(140deg, #FBF7F3 0%, #F4ECE3 45%, #EBE0D5 100%) !important;
+    color: #38070D !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body.theme-nude-rose .ebook-page.page-back-cover {
+    background: radial-gradient(circle at 50% 38%, #FAF5F0 0%, #F2E9E1 60%, #E7DCD2 100%) !important;
+    color: #38070D !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  body.theme-nude-rose .cover-title-highlight {
+    background: #916066 !important;
+    color: #FFFFFF !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+}

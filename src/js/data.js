@@ -1,6 +1,12 @@
 // src/js/data.js
 // Todos los datos dinámicos de la aplicación Karla Godoy, listos para producción local o GitHub Pages.
 
+// Dos propuestas editoriales del mismo título, facilitadas para revisión visual.
+export const EBOOK_DESIGN_PROPOSALS = [
+  { name: 'Marsala', label: 'Propuesta 01', href: './ebooks/hago-todo-bien/variacion-1-marsala.html' },
+  { name: 'Nude Rose', label: 'Propuesta 02', href: './ebooks/hago-todo-bien/variacion-2-nude-rose.html' },
+];
+
 export const EBOOKS_DATA = [
   {
     id: 'food-is-medicine',

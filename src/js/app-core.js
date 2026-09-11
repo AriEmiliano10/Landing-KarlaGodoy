@@ -1,5 +1,6 @@
 import {
   EBOOKS_DATA,
+  EBOOK_DESIGN_PROPOSALS,
   SERVICE_PLANS,
   TESTIMONIALS_DATA,
   FAQ_ITEMS,
@@ -681,19 +682,37 @@ class KarlaApp {
       <section id="e-books" class="py-20 bg-[#FAF9F6]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          <!-- Section layout header -->
-          <div class="text-center max-w-2xl mx-auto space-y-4 mb-14">
-            <span class="font-serif italic text-xl text-[#916066] tracking-tight block">
-              Biblioteca virtual de autor
-            </span>
-            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#4f0911] tracking-tight">
-              E-Books Interactivos Clínicos
-            </h2>
-            <p class="font-sans text-sm text-[#713132]/95 leading-relaxed font-light">
-              Guías completas paso a paso, recetarios sin azúcar refinada y protocolos de salud hormonal diseñados para educarte y empoderar tus decisiones de bienestar diario.
-            </p>
+          <div class="kg-ebook-feature" aria-labelledby="ebook-proposals-title">
+            <div class="kg-ebook-intro">
+              <span class="kg-ebook-eyebrow">La biblioteca de Karla</span>
+              <p class="kg-ebook-kicker">Método Balance · E-book</p>
+              <h2 id="ebook-proposals-title">Hago todo bien<br><em>y no pierdo grasa.</em></h2>
+              <p class="kg-ebook-description">La guía para entender qué está frenando tus resultados y construir una estrategia que sí puedas sostener.</p>
+              <div class="kg-ebook-meta"><span><i data-lucide="book-open" aria-hidden="true"></i>33 páginas</span><span>Guía + cuaderno de trabajo</span></div>
+              <div class="kg-ebook-editorial-note">
+                <span>Un e-book, dos formas de verlo.</span>
+                <p>Explora las propuestas Marsala y Nude Rose. Abre cada edición para recorrer su contenido y comparar los diseños.</p>
+                <small>Propuestas de diseño en revisión</small>
+              </div>
+            </div>
+            <div class="kg-ebook-gallery" aria-label="Propuestas de diseño del e-book">
+              ${EBOOK_DESIGN_PROPOSALS.map((proposal, index) => `
+                <a class="kg-ebook-edition kg-ebook-edition--${index + 1}" href="${proposal.href}" target="_blank" rel="noopener noreferrer" aria-label="Explorar edición ${proposal.name} (nueva pestaña)">
+                  <div class="kg-ebook-book">
+                    <iframe src="${proposal.href}?preview=cover" title="Portada ${proposal.name}" loading="lazy" tabindex="-1" aria-hidden="true" sandbox="allow-scripts"></iframe>
+                  </div>
+                  <div class="kg-ebook-edition-caption">
+                    <span class="kg-ebook-edition-number">0${index + 1}</span>
+                    <div><h3>${proposal.name}</h3><span class="kg-ebook-explore">Explorar edición <span aria-hidden="true">↗</span></span></div>
+                  </div>
+                </a>
+              `).join('')}
+            </div>
           </div>
 
+          <details class="kg-ebook-catalog">
+            <summary><span>Explora otros títulos <small>Catálogo de muestra</small></span><span class="kg-ebook-catalog-icon" aria-hidden="true">+</span></summary>
+            <div class="kg-ebook-catalog-content">
           <!-- Ebooks Layout Container -->
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             ${EBOOKS_DATA.map(ebook => `
@@ -765,6 +784,8 @@ class KarlaApp {
             `).join('')}
           </div>
 
+            </div>
+          </details>
         </div>
       </section>
     `;
